@@ -13,6 +13,7 @@ public class ModalPanel : MonoBehaviour {
     public GameObject modalPanelObject;
 
     private static ModalPanel modalPanel;
+    private bool closed = false;
 
     public static ModalPanel Instance()
     {
@@ -30,7 +31,38 @@ public class ModalPanel : MonoBehaviour {
 
     public void Choice(string npc, UnityAction yesEvent, UnityAction noEvent, UnityAction cancelEvent)
     {
+        modalPanelObject.SetActive(true);
         yesButton.onClick.RemoveAllListeners();
+        yesButton.onClick.AddListener(yesEvent);
+        yesButton.onClick.AddListener(ClosePanel);
+
+        modalPanelObject.SetActive(true);
+        noButton.onClick.RemoveAllListeners();
+        noButton.onClick.AddListener(noEvent);
+        noButton.onClick.AddListener(ClosePanel);
+
+        modalPanelObject.SetActive(true);
+        cancelButton.onClick.RemoveAllListeners();
+        cancelButton.onClick.AddListener(cancelEvent);
+        cancelButton.onClick.AddListener(ClosePanel);
+
+        this.npc.text = npc;
+        yesButton.gameObject.SetActive(true);
+        noButton.gameObject.SetActive(true);
+        cancelButton.gameObject.SetActive(true);
     }
+
+   void  ClosePanel()
+    {
+        closed = true;
+        modalPanelObject.SetActive(false);
+        
+    }
+
+    public bool CloseState()
+    {
+        return closed;
+    }
+   
 
 }

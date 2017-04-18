@@ -8,17 +8,17 @@ public class Movement : MonoBehaviour
 
     public float movementSpeed = 1.0f;
     private Vector3 targetPosition;
-    private Vector3 startPosition;
+    
     
 
 
     void Start()
     {
        
-        startPosition.z = 0;
-        startPosition.x = 0;
-        startPosition.y = -3;
-        gameObject.transform.position = startPosition;
+        targetPosition.z = -5;
+        targetPosition.x = 0;
+        targetPosition.y = -3;
+
         
     }
 
@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
           
 
                 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                targetPosition.z = 0;
+                targetPosition.z = -5;
                 targetPosition.y = -3;
                 //  
             }

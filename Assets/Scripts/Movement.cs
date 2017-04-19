@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour
     private Vector3 targetPosition;
 
     public int positionY;
+    public int positionZ;
 
     public static Movement Instance()
     {
@@ -32,6 +33,7 @@ public class Movement : MonoBehaviour
         targetPosition.x = 0;
         targetPosition.y = -3;
         positionY = -3;
+        positionZ = -5;
         
     }
 
@@ -45,7 +47,7 @@ public class Movement : MonoBehaviour
           
 
                 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                targetPosition.z = -5;
+                targetPosition.z = positionZ;
                 targetPosition.y = positionY;
                 //  
             }
@@ -61,9 +63,14 @@ public class Movement : MonoBehaviour
             }
 
         }
+    /// <summary>
+    /// Changes the y position to -18
+    /// </summary>
    public void changeYposition()
     {
         positionY = -18;
+        targetPosition.y = positionY;
     }
+  
     }
 

@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BringToFront.cs" />
      <Compile Include="Assets\Scripts\ButtonContinue.cs" />
      <Compile Include="Assets\Scripts\DialogueCanvas.cs" />
      <Compile Include="Assets\Scripts\DisplayManager.cs" />

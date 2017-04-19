@@ -32,6 +32,18 @@ public class TestModalPanel : MonoBehaviour
     {
         modalPanel.Choice("Would you like to answer?\n Maybe?", myYesAction, myNoAction, myCancelAction);
     }
+    public void TestC()
+    {
+        // modalPanel.Choice("Hello.", myCancelAction);
+        ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Hello." };
+        modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Hey.", action = myCancelAction };
+        modalPanel.NewChoice(modalPanelDetails);
+    }
+
+    public void NPC2()
+    {
+        modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
+    }
 
     //Send to the modal panel to set up the buttons and functions to call
     //wrapped into unity actions

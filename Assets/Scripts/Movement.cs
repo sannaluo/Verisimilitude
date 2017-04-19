@@ -5,20 +5,33 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
+    public GameObject movementObject;
+    private static Movement movement;
     public float movementSpeed = 1.0f;
     private Vector3 targetPosition;
-    
-    
 
+    public int positionY;
 
+    public static Movement Instance()
+    {
+        if (!movement)
+        {
+            movement = FindObjectOfType(typeof(Movement)) as Movement;
+            if (!movement)
+            {
+                Debug.LogError("There needs to be one active Movement script on a GameObject in your Scene");
+            }
+        }
+        return movement;
+
+    }
     void Start()
     {
        
         targetPosition.z = -5;
         targetPosition.x = 0;
         targetPosition.y = -3;
-
+        positionY = -3;
         
     }
 
@@ -33,7 +46,7 @@ public class Movement : MonoBehaviour
 
                 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 targetPosition.z = -5;
-                targetPosition.y = -3;
+                targetPosition.y = positionY;
                 //  
             }
             if (targetPosition != transform.position)
@@ -48,5 +61,9 @@ public class Movement : MonoBehaviour
             }
 
         }
+   public void changeYposition()
+    {
+        positionY = -18;
+    }
     }
 

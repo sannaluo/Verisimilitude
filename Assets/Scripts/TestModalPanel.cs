@@ -4,20 +4,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
+
 public class TestModalPanel : MonoBehaviour
 {
 
     private ModalPanel modalPanel;
     private DisplayManager displayManager;
+    private Movement movement;
 
     private UnityAction myYesAction;
     private UnityAction myNoAction;
     private UnityAction myCancelAction;
+   
 
     void Awake()
     {
         modalPanel = ModalPanel.Instance();
         displayManager = DisplayManager.Instance();
+        movement = Movement.Instance();
 
         myYesAction = new UnityAction(TestYesFunction);
         myNoAction = new UnityAction(TestNoFunction);
@@ -38,7 +42,9 @@ public class TestModalPanel : MonoBehaviour
     }
     void TestNoFunction()
     {
-        displayManager.DisplayMessage("no!");
+        Camera.main.transform.Translate(0, -15, 0);
+        movement.changeYposition();
+        
     }
     void TestCancelFunction()
     {

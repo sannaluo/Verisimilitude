@@ -9,8 +9,10 @@ public class TestModalPanel : MonoBehaviour
 {
 
     private ModalPanel modalPanel;
-    private DisplayManager displayManager;
+ 
     private Movement movement;
+  //  private NPCPanel npcPanel;
+   // private NPCPanel2 npcPanel2;
 
     private UnityAction myYesAction;
     private UnityAction myNoAction;
@@ -20,8 +22,9 @@ public class TestModalPanel : MonoBehaviour
     void Awake()
     {
         modalPanel = ModalPanel.Instance();
-        displayManager = DisplayManager.Instance();
+  
         movement = Movement.Instance();
+ 
 
         myYesAction = new UnityAction(TestYesFunction);
         myNoAction = new UnityAction(TestNoFunction);
@@ -30,7 +33,7 @@ public class TestModalPanel : MonoBehaviour
 
     public void TestYNC()
     {
-        modalPanel.Choice("Would you like to answer?\n Maybe?", myYesAction, myNoAction, myCancelAction);
+     //   modalPanel.Choice("Would you like to answer?\n Maybe?", myYesAction, myNoAction, myCancelAction);
     }
     public void TestC()
     {
@@ -42,7 +45,12 @@ public class TestModalPanel : MonoBehaviour
 
     public void NPC2()
     {
-        modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
+        //  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
+        ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Sup." };
+        modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Bye.", action = myYesAction };
+        modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Eww.", action = myNoAction };
+        modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Yo.", action = myCancelAction };
+        modalPanel.NewChoice(modalPanelDetails);
     }
 
     //Send to the modal panel to set up the buttons and functions to call
@@ -50,16 +58,18 @@ public class TestModalPanel : MonoBehaviour
 
     void TestYesFunction()
     {
-        displayManager.DisplayMessage("yes!");
+        Camera.main.transform.Translate(0, 15, 0);
+        movement.changeYpositionUp();
+  
     }
     void TestNoFunction()
     {
         Camera.main.transform.Translate(0, -15, 0);
         movement.changeYposition();
-        
+    
     }
     void TestCancelFunction()
     {
-        displayManager.DisplayMessage("cancelled!");
+       //
     }
 }

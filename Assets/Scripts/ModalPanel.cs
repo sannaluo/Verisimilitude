@@ -34,7 +34,6 @@ public class ModalPanel : MonoBehaviour {
     public Text button3Text;
 
     private static ModalPanel modalPanel;
-    private bool closed = false;
 
     public static ModalPanel Instance()
     {
@@ -49,15 +48,14 @@ public class ModalPanel : MonoBehaviour {
             return modalPanel;
         
     }
-
+/*
     public void Choice(string npc, UnityAction yesEvent, UnityAction noEvent, UnityAction cancelEvent)
     {
-        modalPanelObject.SetActive(true);
-        button1.onClick.RemoveAllListeners();
+       modalPanelObject.SetActive(true);
+       button1.onClick.RemoveAllListeners();
         button1.onClick.AddListener(yesEvent);
         button1.onClick.AddListener(ClosePanel);
-
-        modalPanelObject.SetActive(true);
+       modalPanelObject.SetActive(true);
         button2.onClick.RemoveAllListeners();
         button2.onClick.AddListener(noEvent);
         button2.onClick.AddListener(ClosePanel);
@@ -72,6 +70,7 @@ public class ModalPanel : MonoBehaviour {
         button2.gameObject.SetActive(true);
         button3.gameObject.SetActive(true);
     }
+    */
 
     public void NewChoice(ModalPanelDetails details)
     {
@@ -87,7 +86,7 @@ public class ModalPanel : MonoBehaviour {
         button1Text.text = details.button1Details.buttonTitle;
         button1.gameObject.SetActive(true);
 
-        if (details.button2Details!= null)
+        if (details.button2Details != null)
         {
             button2.onClick.RemoveAllListeners();
             button2.onClick.AddListener(details.button2Details.action);
@@ -100,11 +99,11 @@ public class ModalPanel : MonoBehaviour {
             button3.onClick.RemoveAllListeners();
             button3.onClick.AddListener(details.button3Details.action);
             button3.onClick.AddListener(ClosePanel);
-            button2Text.text = details.button3Details.buttonTitle;
+            button3Text.text = details.button3Details.buttonTitle;
             button3.gameObject.SetActive(true);
         }
     }
-
+    /*
     //cancel
     public void Choice(string npc, UnityAction cancelEvent)
     {
@@ -120,18 +119,15 @@ public class ModalPanel : MonoBehaviour {
         button2.gameObject.SetActive(false);
         button3.gameObject.SetActive(true);
     }
-
+    */
         void ClosePanel()
     {
-        closed = true;
+       
         modalPanelObject.SetActive(false);
         
     }
 
-    public bool CloseState()
-    {
-        return closed;
-    }
+
    
 
 }

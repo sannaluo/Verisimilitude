@@ -72,5 +72,10 @@ public class Movement : MonoBehaviour
         targetPosition.y = positionY;
     }
   
+    public void changeYpositionUp()
+    {
+        positionY = -3;
+        targetPosition.y = positionY;
+    }
     }
 

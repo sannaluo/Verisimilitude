@@ -35,8 +35,8 @@ public class Movement : MonoBehaviour
        
         targetPosition.z = -5;
         targetPosition.x = 0;
-        targetPosition.y = -3;
-        positionY = -3;
+        targetPosition.y = -2;
+        positionY = -2;
         positionZ = -5;
       
     }
@@ -101,13 +101,13 @@ public class Movement : MonoBehaviour
     /// </summary>
    public void changeYposition()
     {
-        positionY = -18;
+        positionY = -17;
         targetPosition.y = positionY;
     }
   
     public void changeYpositionUp()
     {
-        positionY = -3;
+        positionY = -2;
         targetPosition.y = positionY;
     }
     }

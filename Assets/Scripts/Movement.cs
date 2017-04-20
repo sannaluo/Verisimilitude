@@ -10,8 +10,11 @@ public class Movement : MonoBehaviour
     public float movementSpeed = 1.0f;
     private Vector3 targetPosition;
 
+    public GameObject modalPanelObject;
+
     public int positionY;
     public int positionZ;
+    private Vector3 pz;
 
     public static Movement Instance()
     {
@@ -26,6 +29,7 @@ public class Movement : MonoBehaviour
         return movement;
 
     }
+
     void Start()
     {
        
@@ -34,35 +38,64 @@ public class Movement : MonoBehaviour
         targetPosition.y = -3;
         positionY = -3;
         positionZ = -5;
-        
+      
     }
 
 
    void Update()
     {
-       
+         if (!modalPanelObject.activeSelf)
+      
+        {
 
             if (Input.GetMouseButtonDown(0))
             {
-          
+
 
                 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 targetPosition.z = positionZ;
                 targetPosition.y = positionY;
                 //  
             }
-            if (targetPosition != transform.position)
+
+            if (targetPosition.x != transform.position.x)
             {
-                Vector3 pz = targetPosition - transform.position;
-
-           
+                
+                pz = targetPosition - transform.position;   
+               
                 pz.x = Mathf.Clamp(pz.x, (float)-0.1, (float)0.1);
-                gameObject.transform.position += pz;
-
+                gameObject.transform.position += pz;         
 
             }
-
+        } 
         }
+    /// <summary>
+    /// sets target position as current position
+    /// </summary>
+   public void StopMoving()
+    {
+
+        targetPosition = transform.position;
+    }
+   
+    
+    public bool IsMoving()
+    {
+        //  if (pz.x < 10)
+        targetPosition.z = transform.position.z;
+        targetPosition.y = transform.position.y;
+      if (targetPosition != transform.position)
+        {
+            Debug.Log("isMoving true");
+            return true;
+        }
+        else
+        {
+            Debug.Log("IsMoving false");
+            return false;
+        }
+    }
+
     /// <summary>
     /// Changes the y position to -18
     /// </summary>

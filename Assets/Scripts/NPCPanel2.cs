@@ -15,6 +15,7 @@ public class NPCPanel2 : MonoBehaviour
      private NPCPanel npcPanel;
     public GameObject npcPanel2Object;
     public GameObject npcPanelObject;
+  //  public GameObject movementObject;
     private UnityAction myYesAction;
     private UnityAction myNoAction;
     private UnityAction myCancelAction;
@@ -38,9 +39,11 @@ public class NPCPanel2 : MonoBehaviour
     void Awake()
     {
         modalPanel = ModalPanel.Instance();
-   
+       // modalPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
+
         movement = Movement.Instance();
-          npcPanel = NPCPanel.Instance();
+       // movement = FindObjectOfType(typeof(Movement)) as Movement;
+        npcPanel = NPCPanel.Instance();
         //  npcPanel2 = NPCPanel2.Instance();
 
         myYesAction = new UnityAction(TestYesFunction);
@@ -67,17 +70,23 @@ public class NPCPanel2 : MonoBehaviour
     /// Something the npc says and what you can answer.
     /// Then sets the panel inactive.
     /// </summary>
-    public void NPC2()
+    public void NPC3()
     {
-      //  npcPanel2Object.SetActive(true);
+        npcPanel2Object.SetActive(true);
         //  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
         ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "OMG help me!" };
-        modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Nah.", action = myYesAction };
-        modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "ERHMAHGERD totally.", action = myNoAction };
+        modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "ERHMAHGERD totally.", action = myYesAction };
+        modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Nah.", action = myNoAction };
         modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Sure.", action = myCancelAction };
-        modalPanel.NewChoice(modalPanelDetails);
-        //  npcPanelObject.SetActive(false);
-        
+        Debug.Log("Button pressed / NPC3");
+
+        if (movement.IsMoving() == false)
+        {
+            Debug.Log("Moving false");
+            modalPanel.NewChoice(modalPanelDetails);
+            //  npcPanelObject.SetActive(false);
+        }
+        else { Debug.Log("moving not false"); }
     }
 
     //Send to the modal panel to set up the buttons and functions to call
@@ -94,16 +103,17 @@ public class NPCPanel2 : MonoBehaviour
     }
     void TestNoFunction()
     {
-      //  Camera.main.transform.Translate(0, -15, 0);
-       // movement.changeYposition();
+        //  Camera.main.transform.Translate(0, -15, 0);
+        // movement.changeYposition();
         //    npcPanel.ClosePanel();
         //   npcPanel2.OpenPanel();
-       // npcPanel2Object.SetActive(false);
-       //tähän mittari --
+        // npcPanel2Object.SetActive(false);
+        //tähän mittari --
+        movement.StopMoving();
     }
     void TestCancelFunction()
     {
-        
+        movement.StopMoving();
     }
 }
 

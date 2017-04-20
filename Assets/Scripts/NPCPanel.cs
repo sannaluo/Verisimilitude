@@ -69,37 +69,46 @@ public class NPCPanel : MonoBehaviour
     public void NPC2()
     {
         npcPanelObject.SetActive(true);
-        //  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
-        ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Hey you." };
-        modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Bye.", action = myYesAction };
-        modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Hey.", action = myNoAction };
-        modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Sup?", action = myCancelAction };
-        modalPanel.NewChoice(modalPanelDetails);
-      //  npcPanelObject.SetActive(false);
-    }
-
+       
+            //  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
+            ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Hey you." };
+            modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Hey.", action = myYesAction };
+            modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Bye.", action = myNoAction };
+            modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Sup?", action = myCancelAction };
+        Debug.Log("Button pressed / NPC3");
+        if (movement.IsMoving() == false)
+        {
+            Debug.Log("Moving false");
+            modalPanel.NewChoice(modalPanelDetails);
+            //  npcPanelObject.SetActive(false);
+        }
+        else { Debug.Log("moving not false"); }
+    
+}
     //Send to the modal panel to set up the buttons and functions to call
     //wrapped into unity actions
 
     void TestYesFunction()
     {
-      //  Camera.main.transform.Translate(0, 15, 0);
-       // movement.changeYpositionUp();
+        movement.StopMoving();
+        //  Camera.main.transform.Translate(0, 15, 0);
+        // movement.changeYpositionUp();
         // npcPanel2.ClosePanel();
         //npcPanel.OpenPanel();
-     //   npcPanelObject.SetActive(true);
+        //   npcPanelObject.SetActive(true);
     }
     void TestNoFunction()
     {
         Camera.main.transform.Translate(0, -15, 0);
         movement.changeYposition();
+       
         npcPanel2Object.SetActive(true);
         npcPanelObject.SetActive(false);
        //tähän mittari --
     }
     void TestCancelFunction()
     {
-      
+        movement.StopMoving();
     }
 }
 

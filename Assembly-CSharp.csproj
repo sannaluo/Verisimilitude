@@ -56,6 +56,8 @@
      <Compile Include="Assets\Scripts\Movement.cs" />
      <Compile Include="Assets\Scripts\NPCPanel.cs" />
      <Compile Include="Assets\Scripts\NPCPanel2.cs" />
+     <Compile Include="Assets\Scripts\NPCPanel3.cs" />
+     <Compile Include="Assets\Scripts\NPCPanel4.cs" />
      <Compile Include="Assets\Scripts\PlayerCollision.cs" />
      <Compile Include="Assets\Scripts\PleasantnessMeter.cs" />
      <Compile Include="Assets\Scripts\TestModalPanel.cs" />

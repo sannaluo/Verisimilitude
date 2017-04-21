@@ -13,7 +13,13 @@ public class PleasantnessMeter : MonoBehaviour {
     private Movement movement;
     private static PleasantnessMeter pleasantnessMeter;
     private Vector3 death;
-    
+    private Canvas canvas;
+
+    public GameObject n1;
+    public GameObject n2;
+    public GameObject n3;
+    public GameObject n4;
+
 
 
     public static PleasantnessMeter Instance()
@@ -34,6 +40,11 @@ public class PleasantnessMeter : MonoBehaviour {
     {
         currentLevel = startingLevel;
         movement = Movement.Instance();
+        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+      /*  n1 = NPCPanel.Instance();
+        n2 = NPCPanel2.Instance();
+        n3 = NPCPanel3.Instance();
+        n4 = NPCPanel4.Instance();*/
     }
 
     public void ReduceLevel(int amount)
@@ -49,11 +60,24 @@ public class PleasantnessMeter : MonoBehaviour {
 
         void Death(){
             isDead = true;
-        death.x = 100;
-        death.y = 100;
-        death.z = -10;
+            death.x = 100;
+            death.y = 100;
+            death.z = -10;
             movement.StopMoving();
-        Camera.main.transform.position = death;
-        }
+            Camera.main.transform.position = death;
+
+
+        canvas.GetComponent<Canvas>().enabled = false;
+        /*
+         n1.GetComponent<NPCPanel>().enabled = false;
+         n2.GetComponent<NPCPanel2>().enabled = false;
+         n3.GetComponent<NPCPanel3>().enabled = false;
+         n4.GetComponent<NPCPanel4>().enabled = false;
+         */
+        n1.SetActive(false);
+        n2.SetActive(false);
+        n3.SetActive(false);
+        n4.SetActive(false);
+    }
     }
 

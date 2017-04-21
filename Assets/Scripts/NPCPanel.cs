@@ -10,6 +10,7 @@ public class NPCPanel : MonoBehaviour
 
     private ModalPanel modalPanel;
     private Movement movement;
+    private PleasantnessMeter meter;
  
    private NPCPanel2 npcPanel2;
     public GameObject npcPanelObject;
@@ -20,6 +21,11 @@ public class NPCPanel : MonoBehaviour
 
     private static NPCPanel npcPanel;
     public GameObject npcPanel2Object;
+    /*
+    private Button flowerButton;
+    private Button paintingButton;
+
+    private Item item; */
 
     public static NPCPanel Instance()
     {
@@ -34,6 +40,14 @@ public class NPCPanel : MonoBehaviour
         return npcPanel;
 
     }
+    /*
+    void Start()
+    {
+
+        flowerButton.onClick.AddListener(() => item.DestroyItem(flowerButton));
+        paintingButton.onClick.AddListener(() => item.DestroyItem(paintingButton));
+    }
+    */
 
     void Awake()
     {
@@ -42,9 +56,15 @@ public class NPCPanel : MonoBehaviour
      //   npcPanel = NPCPanel.Instance();
      npcPanel2 = NPCPanel2.Instance();
 
+        meter = PleasantnessMeter.Instance();
+
         myYesAction = new UnityAction(TestYesFunction);
         myNoAction = new UnityAction(TestNoFunction);
         myCancelAction = new UnityAction(TestCancelFunction);
+        /*
+        flowerButton = GameObject.Find("FlowerButton").GetComponent<Button>();
+        paintingButton = GameObject.Find("PaintingButton").GetComponent<Button>();
+        */
     }
     /*
     public void TestYNC()
@@ -99,16 +119,25 @@ public class NPCPanel : MonoBehaviour
     }
     void TestNoFunction()
     {
-        Camera.main.transform.Translate(0, -15, 0);
+        Camera.main.transform.position = new Vector3(0, -15, -10);
         movement.changeYposition();
        
         npcPanel2Object.SetActive(true);
         npcPanelObject.SetActive(false);
-       //tähän mittari --
+        //tähän mittari --
+        MeterDown();
     }
     void TestCancelFunction()
     {
         movement.StopMoving();
+    }
+
+    void MeterDown()
+    {
+        if(meter.currentLevel > 0)
+        {
+            meter.ReduceLevel(1);
+        }
     }
 }
 

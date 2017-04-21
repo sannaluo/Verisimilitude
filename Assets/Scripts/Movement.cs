@@ -110,5 +110,12 @@ public class Movement : MonoBehaviour
         positionY = -2;
         targetPosition.y = positionY;
     }
+
+    public void changeRoom2()
+    {
+        positionY = -34;
+        targetPosition.y = positionY;
+
+    }
     }
 

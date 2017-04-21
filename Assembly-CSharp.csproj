@@ -51,11 +51,13 @@
      <Compile Include="Assets\Scripts\DialogueCanvas.cs" />
      <Compile Include="Assets\Scripts\DisplayManager.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\ModalPanel.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
      <Compile Include="Assets\Scripts\NPCPanel.cs" />
      <Compile Include="Assets\Scripts\NPCPanel2.cs" />
      <Compile Include="Assets\Scripts\PlayerCollision.cs" />
+     <Compile Include="Assets\Scripts\PleasantnessMeter.cs" />
      <Compile Include="Assets\Scripts\TestModalPanel.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

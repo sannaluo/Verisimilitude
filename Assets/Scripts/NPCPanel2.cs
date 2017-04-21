@@ -94,7 +94,7 @@ public class NPCPanel2 : MonoBehaviour
 
     void TestYesFunction()
     {
-        Camera.main.transform.Translate(0, 15, 0);
+        Camera.main.transform.position = new Vector3(0, 0, -10);
         movement.changeYpositionUp();
         
         //   npcPanelObject.SetActive(true);

@@ -45,6 +45,7 @@ public class TestModalPanel : MonoBehaviour
 
     public void NPC2()
     {
+		
         //  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
         ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Sup." };
         modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Bye.", action = myYesAction };

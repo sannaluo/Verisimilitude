@@ -18,7 +18,7 @@ public class Item : MonoBehaviour
     private NPCPanel2 npcPanel2;
     private NPCPanel3 npcPanel3;
     private Canvas canvas;
-    bool level = false;
+    //bool level = false;
 
     public GameObject npcPanel3Object;
     public GameObject npcPanel2Object;
@@ -83,6 +83,11 @@ public class Item : MonoBehaviour
         itemCounter.text = count + "/4";
 
     }
+	/// <summary>
+	/// moves camera and player model to next room
+	/// disables npcPanel2
+	/// activates npcPanel3
+	/// </summary>
     void changeRoom()
     {
         if (itemCount == 4)
@@ -118,7 +123,11 @@ public class Item : MonoBehaviour
         
     
 
-
+	/// <summary>
+	/// adds 1 to room1 itemcount and turns off button interactablility
+	/// changes room if itemcount reacheas 4
+	/// </summary>
+	/// <param name="item">Item.</param>
     public void DestroyItem(Button item)
     {
         Debug.Log(item + "itemCount" + itemCount);
@@ -134,6 +143,10 @@ public class Item : MonoBehaviour
         }
     }
 
+	/// <summary>
+	/// adds 1 to room2 itemcount and turns off button interactability.
+	/// </summary>
+	/// <param name="item">Item.</param>
     public void DestroyItem2(Button item)
     {
         if (itemCount2 < 5)
@@ -158,6 +171,9 @@ public class Item : MonoBehaviour
             DisableCanvas();
         }
     }
+	/// <summary>
+	/// Disables the canvas.
+	/// </summary>
     void DisableCanvas()
     {
         canvas.GetComponent<Canvas>().enabled = false;

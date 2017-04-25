@@ -37,6 +37,9 @@ public class ModalPanel : MonoBehaviour {
 
     private static ModalPanel modalPanel;
 
+	/// <summary>
+	/// creates a ModalPanel instance.
+	/// </summary>
     public static ModalPanel Instance()
     {
         if (!modalPanel)
@@ -78,6 +81,10 @@ public class ModalPanel : MonoBehaviour {
         }
         */
 
+	/// <summary>
+	/// creates a modal panel interface with up to 3 different buttons
+	/// </summary>
+	/// <param name="details">Details.</param>
     public void NewChoice(ModalPanelDetails details)
     {
         // movement.StopMoving();
@@ -134,6 +141,9 @@ public class ModalPanel : MonoBehaviour {
         button3.gameObject.SetActive(true);
     }
     */
+	/// <summary>
+	/// Closes the modalpanel.
+	/// </summary>
         void ClosePanel()
     {
        
@@ -142,7 +152,7 @@ public class ModalPanel : MonoBehaviour {
         active = false;
     }
 
-    void StopTime()
+    /*void StopTime()
     {
         Time.timeScale = 0f;
     }
@@ -150,9 +160,11 @@ public class ModalPanel : MonoBehaviour {
     void StartTime()
     {
         Time.timeScale = 1f;
-    }
+    }*/
 
-
+	/// <summary>
+	/// returns active variable value.
+	/// </summary>
   public bool Active()
     {
         return active;

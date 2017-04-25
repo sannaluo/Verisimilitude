@@ -47,6 +47,10 @@ public class PleasantnessMeter : MonoBehaviour {
         n4 = NPCPanel4.Instance();*/
     }
 
+	/// <summary>
+	/// reduce Pleasantness Slider by given amount
+	/// </summary>
+	/// <param name="amount">Amount.</param>
     public void ReduceLevel(int amount)
     {
         currentLevel -= amount;
@@ -57,7 +61,9 @@ public class PleasantnessMeter : MonoBehaviour {
         }
     }
    
-
+	/// <summary>
+	/// move camera to Game over picture
+	/// </summary>
         void Death(){
             isDead = true;
             death.x = 100;

@@ -78,7 +78,10 @@ public class Movement : MonoBehaviour
         targetPosition = transform.position;
     }
    
-    
+    /// <summary>
+    /// Determines whether this instance is moving.
+    /// </summary>
+    /// <returns><c>true</c> if this instance is moving; otherwise, <c>false</c>.</returns>
     public bool IsMoving()
     {
         //  if (pz.x < 10)
@@ -97,7 +100,7 @@ public class Movement : MonoBehaviour
     }
 
     /// <summary>
-    /// Changes the y position to -18
+	/// Changes the y position to -17 (room1 nightmare)
     /// </summary>
    public void changeYposition()
     {
@@ -105,23 +108,37 @@ public class Movement : MonoBehaviour
         targetPosition.y = positionY;
     }
   
+	/// <summary>
+	/// Changes the y position to -2. (room1 regular)
+	/// </summary>
     public void changeYpositionUp()
     {
         positionY = -2;
         targetPosition.y = positionY;
     }
 
+	/// <summary>
+	/// Changes the y position to -32. (room2 regular)
+	/// </summary>
     public void changeRoom2()
     {
         positionY = -32;
         targetPosition.y = positionY;
 
     }
+
+	/// <summary>
+	/// Changes the y position to -47. (room2 nightmare)
+	/// </summary>
     public void changeRoom2Down()
     {
         positionY = -47;
         targetPosition.y = positionY;
     }
+
+	/// <summary>
+	/// Changes the y position to -62. (final room)
+	/// </summary>
     public void changeFinal()
     {
         positionY = -62;

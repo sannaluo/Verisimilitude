@@ -18,6 +18,11 @@ public class Item : MonoBehaviour
     private NPCPanel2 npcPanel2;
     private NPCPanel3 npcPanel3;
     private Canvas canvas;
+
+    private SpriteRenderer abcblocks;
+    private SpriteRenderer flower;
+    private SpriteRenderer painting;
+    private SpriteRenderer toysoldier;
     //bool level = false;
 
     public GameObject npcPanel3Object;
@@ -41,11 +46,30 @@ public class Item : MonoBehaviour
         abcButton = GameObject.Find("ABCButton").GetComponent<Button>();
         itemCounter = GameObject.Find("ItemCounter").GetComponent<Text>();
 
-        flowerButton.onClick.AddListener(() => DestroyItem(flowerButton));
-        paintingButton.onClick.AddListener(() => DestroyItem(paintingButton));
-        toySoldierButton.onClick.AddListener(() => DestroyItem(toySoldierButton));
-        abcButton.onClick.AddListener(() => DestroyItem(abcButton));
+        abcblocks = GameObject.Find("abcblocks").GetComponent<SpriteRenderer>();
+        flower = GameObject.Find("flower").GetComponent<SpriteRenderer>();
+        toysoldier = GameObject.Find("toysoldier").GetComponent<SpriteRenderer>();
+        painting = GameObject.Find("painting").GetComponent<SpriteRenderer>();
 
+        /*
+      //  flowerButton.onClick.AddListener(() => DestroyItem(flowerButton));
+       // paintingButton.onClick.AddListener(() => DestroyItem(paintingButton));
+      //  toySoldierButton.onClick.AddListener(() => DestroyItem(toySoldierButton));
+      */
+        abcButton.onClick.AddListener(() => AddCount());
+        abcButton.onClick.AddListener(() => DestroyItem3(abcblocks));
+        flowerButton.onClick.AddListener(() => AddCount());
+        flowerButton.onClick.AddListener(() => DestroyItem3(flower));
+        paintingButton.onClick.AddListener(() => AddCount());
+        paintingButton.onClick.AddListener(() => DestroyItem3(painting));
+       toySoldierButton.onClick.AddListener(() => AddCount());
+        toySoldierButton.onClick.AddListener(() => DestroyItem3(toysoldier));
+        /*
+       // toySoldierButton.onClick.AddListener(() => DestroyItem(toySoldierButton));
+       // paintingButton.onClick.AddListener(() => DestroyItem(paintingButton));
+      //  flowerButton.onClick.AddListener(() => DestroyItem(flowerButton));
+      */
+      /*
         flowerButton2 = GameObject.Find("FlowerButton2").GetComponent<Button>();
         paintingButton2 = GameObject.Find("PaintingButton2").GetComponent<Button>();
         toySoldierButton2 = GameObject.Find("ToySoldierButton2").GetComponent<Button>();
@@ -56,7 +80,7 @@ public class Item : MonoBehaviour
         paintingButton2.onClick.AddListener(() => DestroyItem2(paintingButton2));
         toySoldierButton2.onClick.AddListener(() => DestroyItem2(toySoldierButton2));
         abcButton2.onClick.AddListener(() => DestroyItem2(abcButton2));
-
+*/
     }
     void Awake()
     {
@@ -121,8 +145,21 @@ public class Item : MonoBehaviour
         }
     }
         
-    
-
+    public void AddCount()
+    {
+        Debug.Log( "itemCount" + itemCount);
+        if (itemCount < 5)
+        {
+            itemCount += 1;
+        }
+      //  item.interactable = false;
+        // GameObject.Destroy(this.gameObject);
+        if (itemCount == 4)
+        {
+            changeRoom();
+        }
+    }
+    /*
 	/// <summary>
 	/// adds 1 to room1 itemcount and turns off button interactablility
 	/// changes room if itemcount reacheas 4
@@ -142,7 +179,35 @@ public class Item : MonoBehaviour
             changeRoom();
         }
     }
-
+    */
+    /// <summary>
+    /// destroys the sprite attatched to the button. Adds one to itemCount.
+    /// If itemCount is 4, changes room.
+    /// </summary>
+    /// <param name="item"></param>
+    public void DestroyItem3(SpriteRenderer item)
+    {
+        if (itemCount2 < 5)
+        {
+            itemCount2 += 1;
+        }
+        SpriteRenderer.Destroy(item);
+        if (itemCount2 == 4)
+        {
+            Camera.main.transform.position = new Vector3(0, -60, -10);
+            movement.changeFinal();
+            if (npcPanel4Object.activeSelf)
+            {
+                npcPanel4Object.SetActive(false);
+            }
+            if (npcPanel3Object.activeSelf)
+            {
+                npcPanel3Object.SetActive(false);
+            }
+            DisableCanvas();
+        }
+    }
+    /*
 	/// <summary>
 	/// adds 1 to room2 itemcount and turns off button interactability.
 	/// </summary>
@@ -171,6 +236,7 @@ public class Item : MonoBehaviour
             DisableCanvas();
         }
     }
+    */
 	/// <summary>
 	/// Disables the canvas.
 	/// </summary>

@@ -89,10 +89,10 @@ public class NPCPanel : MonoBehaviour
 		npcPanelObject.SetActive (true);
        
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
-		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Hey you." };
-		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Hey.", action = myYesAction };
-		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Bye.", action = myNoAction };
-		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Sup?", action = myCancelAction };
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Looking at the screen you see something zip across it. The creature returns and you recognize it as your younger self. 'What would you like to watch?' echoes across the room." };
+		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Do nothing.", action = myYesAction };
+		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Choose a scary channel.", action = myNoAction };
+		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Choose your favorite childhood channel (hint).", action = myCancelAction };
 		Debug.Log ("Button pressed / NPC3");
 		if (movement.IsMoving () == false) {
 			Debug.Log ("Moving false");
@@ -102,6 +102,43 @@ public class NPCPanel : MonoBehaviour
 			Debug.Log ("moving not false");
 		}
     
+	}
+	public void NPCParentNormal ()
+	{
+		npcPanelObject.SetActive (true);
+
+		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Looking at your parents you see they look younger. They seem haunted and uncomfortable." };
+		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Greet them.", action = myYesAction };
+		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Tell them to go away.", action = myNoAction };
+		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Leave.", action = myCancelAction };
+		Debug.Log ("Button pressed / NPC3");
+		if (movement.IsMoving () == false) {
+			Debug.Log ("Moving false");
+			modalPanel.NewChoice (modalPanelDetails);
+			//  npcPanelObject.SetActive(false);
+		} else {
+			Debug.Log ("moving not false");
+		}
+
+	}
+	public void NPCParentNormalcontinued ()
+	{
+		npcPanelObject.SetActive (true);
+
+		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "your parents compliment how well furnished the room is. Your father exclaims that the painting was a steal" };
+		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "leave", action = myYesAction };
+
+		Debug.Log ("Button pressed / NPC3");
+		if (movement.IsMoving () == false) {
+			Debug.Log ("Moving false");
+			modalPanel.NewChoice (modalPanelDetails);
+			//  npcPanelObject.SetActive(false);
+		} else {
+			Debug.Log ("moving not false");
+		}
+
 	}
 	//Send to the modal panel to set up the buttons and functions to call
 	//wrapped into unity actions

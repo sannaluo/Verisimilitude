@@ -56,13 +56,13 @@ public class Item : MonoBehaviour
        // paintingButton.onClick.AddListener(() => DestroyItem(paintingButton));
       //  toySoldierButton.onClick.AddListener(() => DestroyItem(toySoldierButton));
       */
-        abcButton.onClick.AddListener(() => AddCount());
+        abcButton.onClick.AddListener(() => AddCount(abcButton));
         abcButton.onClick.AddListener(() => DestroyItem3(abcblocks));
-        flowerButton.onClick.AddListener(() => AddCount());
+        flowerButton.onClick.AddListener(() => AddCount(flowerButton));
         flowerButton.onClick.AddListener(() => DestroyItem3(flower));
-        paintingButton.onClick.AddListener(() => AddCount());
+        paintingButton.onClick.AddListener(() => AddCount(paintingButton));
         paintingButton.onClick.AddListener(() => DestroyItem3(painting));
-       toySoldierButton.onClick.AddListener(() => AddCount());
+       toySoldierButton.onClick.AddListener(() => AddCount(toySoldierButton));
         toySoldierButton.onClick.AddListener(() => DestroyItem3(toysoldier));
         /*
        // toySoldierButton.onClick.AddListener(() => DestroyItem(toySoldierButton));
@@ -145,14 +145,14 @@ public class Item : MonoBehaviour
         }
     }
         
-    public void AddCount()
+    public void AddCount(Button item)
     {
         Debug.Log( "itemCount" + itemCount);
         if (itemCount < 5)
         {
             itemCount += 1;
         }
-      //  item.interactable = false;
+        item.interactable = false;
         // GameObject.Destroy(this.gameObject);
         if (itemCount == 4)
         {

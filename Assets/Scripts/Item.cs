@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
-
+	
     private Button flowerButton;
     private Button paintingButton;
     private Button toySoldierButton;
@@ -24,6 +24,7 @@ public class Item : MonoBehaviour
     private SpriteRenderer painting;
     private SpriteRenderer toysoldier;
     //bool level = false;
+
 
     public GameObject npcPanel3Object;
     public GameObject npcPanel2Object;
@@ -56,6 +57,7 @@ public class Item : MonoBehaviour
        // paintingButton.onClick.AddListener(() => DestroyItem(paintingButton));
       //  toySoldierButton.onClick.AddListener(() => DestroyItem(toySoldierButton));
       */
+
         abcButton.onClick.AddListener(() => AddCount(abcButton));
         abcButton.onClick.AddListener(() => DestroyItem3(abcblocks));
         flowerButton.onClick.AddListener(() => AddCount(flowerButton));
@@ -244,4 +246,9 @@ public class Item : MonoBehaviour
     {
         canvas.GetComponent<Canvas>().enabled = false;
     }
+	public void EnableCanvas()
+	{
+		canvas.GetComponent<Canvas>().enabled = true;
+	}
+
 }

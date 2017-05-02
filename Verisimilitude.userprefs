@@ -1,22 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NPCPanel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\StartPanel.cs">
     <Files>
-      <File FileName="Assets\Scripts\ModalPanel.cs" Line="120" Column="57" />
-      <File FileName="Assets\Scripts\NPCPanel.cs" Line="33" Column="32" />
-      <File FileName="Assets\Scripts\NPCPanel2.cs" Line="96" Column="176" />
-      <File FileName="Assets\Scripts\NPCPanel3.cs" Line="128" Column="9" />
-      <File FileName="Assets\Scripts\TestModalPanel.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NPCPanel4.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ModalPanel.cs" Line="118" Column="11" />
       <File FileName="Assets\Scripts\Movement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BringToFront.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ButtonContinue.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PlayerCollision.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PleasantnessMeter.cs" Line="7" Column="32" />
-      <File FileName="Assets\Scripts\Item.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ButtonContinue.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\StartPanel.cs" Line="103" Column="3" />
+      <File FileName="Assets\Scripts\PleasantnessMeter.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="D:\koulu\C#\Verisimilitude2\Verisimilitude\Assets\Scripts\NPCPanel.cs" line="17" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

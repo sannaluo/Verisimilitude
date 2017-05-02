@@ -22,6 +22,7 @@ public class PleasantnessMeter : MonoBehaviour {
 
 
 
+
     public static PleasantnessMeter Instance()
     {
         if (!pleasantnessMeter)

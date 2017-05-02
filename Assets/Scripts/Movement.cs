@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour
     public int positionZ;
     private Vector3 pz;
 
+
     public static Movement Instance()
     {
         if (!movement)
@@ -44,31 +45,31 @@ public class Movement : MonoBehaviour
 
    void Update()
     {
-         if (!modalPanelObject.activeSelf)
-      
-        {
+		
+		if (!modalPanelObject.activeSelf) {
 
-            if (Input.GetMouseButtonDown(0))
-            {
+			if (Input.GetMouseButtonDown (0)) {
 
 
-                targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                targetPosition.z = positionZ;
-                targetPosition.y = positionY;
-                //  
-            }
+				targetPosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+				targetPosition.z = positionZ;
+				targetPosition.y = positionY;
+				//  
+			}
 
-            if (targetPosition.x != transform.position.x)
-            {
+				if (targetPosition.x != transform.position.x) {
                 
-                pz = targetPosition - transform.position;   
+					pz = targetPosition - transform.position;   
                
-                pz.x = Mathf.Clamp(pz.x, (float)-0.1, (float)0.1);
-                gameObject.transform.position += pz;         
+					pz.x = Mathf.Clamp (pz.x, (float)-0.1, (float)0.1);
 
-            }
-        } 
-        }
+					gameObject.transform.position += pz;         
+
+				}
+			}
+
+		}
+        
     /// <summary>
     /// sets target position as current position
     /// </summary>
@@ -85,6 +86,8 @@ public class Movement : MonoBehaviour
     public bool IsMoving()
     {
         //  if (pz.x < 10)
+
+
         targetPosition.z = transform.position.z;
         targetPosition.y = transform.position.y;
       if (targetPosition != transform.position)
@@ -144,5 +147,8 @@ public class Movement : MonoBehaviour
         positionY = -62;
         targetPosition.y = positionY;
     }
-    }
-
+    
+	public void startGame() {
+	positionY = -15;
+	}
+}

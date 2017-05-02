@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\NPCPanel4.cs" />
      <Compile Include="Assets\Scripts\PlayerCollision.cs" />
      <Compile Include="Assets\Scripts\PleasantnessMeter.cs" />
+     <Compile Include="Assets\Scripts\StartPanel.cs" />
      <Compile Include="Assets\Scripts\TestModalPanel.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

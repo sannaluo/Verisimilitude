@@ -70,11 +70,11 @@ public class NPCPanel4 : MonoBehaviour
     /// Something the npc says and what you can answer.
     /// Then sets the panel inactive.
     /// </summary>
-    public void NPC3()
+	public void NPCBullyNightmare()
     {
         npcPanel4Object.SetActive(true);
         //  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
-        ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "OMG help me!" };
+        ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "bully nightmare" };
         modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "ERHMAHGERD totally.", action = myYesAction };
         modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Nah.", action = myNoAction };
         modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Sure.", action = myCancelAction };
@@ -88,6 +88,58 @@ public class NPCPanel4 : MonoBehaviour
         }
         else { Debug.Log("moving not false"); }
     }
+	public void NPCBullyNightmareContinued()
+	{
+		npcPanel4Object.SetActive(true);
+		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "bully nighmare hint" };
+		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Leave.", action = myCancelAction };
+
+		Debug.Log("Button pressed / NPC3");
+
+		if (movement.IsMoving() == false)
+		{
+			Debug.Log("Moving false");
+			modalPanel.NewChoice(modalPanelDetails);
+			//  npcPanelObject.SetActive(false);
+		}
+		else { Debug.Log("moving not false"); }
+	}
+	public void NPCTeacherNightmare()
+	{
+		npcPanel4Object.SetActive(true);
+		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "teacher nightmare" };
+		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "ERHMAHGERD totally.", action = myYesAction };
+		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Nah.", action = myNoAction };
+		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Sure.", action = myCancelAction };
+		Debug.Log("Button pressed / NPC3");
+
+		if (movement.IsMoving() == false)
+		{
+			Debug.Log("Moving false");
+			modalPanel.NewChoice(modalPanelDetails);
+			//  npcPanelObject.SetActive(false);
+		}
+		else { Debug.Log("moving not false"); }
+	}
+	public void NPCTeacherNightmareContinued()
+	{
+		npcPanel4Object.SetActive(true);
+		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "bully nighmare hint" };
+		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Leave.", action = myCancelAction };
+
+		Debug.Log("Button pressed / NPC3");
+
+		if (movement.IsMoving() == false)
+		{
+			Debug.Log("Moving false");
+			modalPanel.NewChoice(modalPanelDetails);
+			//  npcPanelObject.SetActive(false);
+		}
+		else { Debug.Log("moving not false"); }
+	}
 
     //Send to the modal panel to set up the buttons and functions to call
     //wrapped into unity actions

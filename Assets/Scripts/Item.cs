@@ -14,7 +14,12 @@ public class Item : MonoBehaviour
 	private Button paintingButton2;
 	private Button toySoldierButton2;
 	private Button abcButton2;
-	private Movement movement;
+    private Button page1Button;
+    private Button page2Button;
+    private Button page3Button;
+    private Button page4Button;
+
+    private Movement movement;
 	private NPCPanel2 npcPanel2;
 	private NPCPanel3 npcPanel3;
 	private Canvas canvas;
@@ -23,10 +28,16 @@ public class Item : MonoBehaviour
 	private SpriteRenderer flower;
 	private SpriteRenderer painting;
 	private SpriteRenderer toysoldier;
-	//bool level = false;
+
+    private SpriteRenderer page1;
+    private SpriteRenderer page2;
+    private SpriteRenderer page3;
+    private SpriteRenderer page4;
+    
+    //bool level = false;
 
 
-	public GameObject npcPanel3Object;
+    public GameObject npcPanel3Object;
 	public GameObject npcPanel2Object;
 	public GameObject npcPanel4Object;
 
@@ -51,14 +62,25 @@ public class Item : MonoBehaviour
 		flower = GameObject.Find ("flower").GetComponent<SpriteRenderer> ();
 		toysoldier = GameObject.Find ("toysoldier").GetComponent<SpriteRenderer> ();
 		painting = GameObject.Find ("painting").GetComponent<SpriteRenderer> ();
+        
 
-		/*
+        page1Button = GameObject.Find("Page1Button").GetComponent<Button>();
+        page2Button = GameObject.Find("Page2Button").GetComponent<Button>();
+        page3Button = GameObject.Find("Page3Button").GetComponent<Button>();
+        page4Button = GameObject.Find("Page4Button").GetComponent<Button>();
+        
+
+        page1 = GameObject.Find("page1").GetComponent<SpriteRenderer>();
+        page2 = GameObject.Find("page2").GetComponent<SpriteRenderer>();
+        page3 = GameObject.Find("page3").GetComponent<SpriteRenderer>();
+        page4 = GameObject.Find("page4").GetComponent<SpriteRenderer>();
+        /*
         flowerButton.onClick.AddListener(() => DestroyItem(flowerButton));
         paintingButton.onClick.AddListener(() => DestroyItem(paintingButton));
         toySoldierButton.onClick.AddListener(() => DestroyItem(toySoldierButton));
         */
 
-		abcButton.onClick.AddListener (() => AddCount (abcButton));
+        abcButton.onClick.AddListener (() => AddCount (abcButton));
 		abcButton.onClick.AddListener (() => DestroyItem3 (abcblocks));
 		flowerButton.onClick.AddListener (() => AddCount (flowerButton));
 		flowerButton.onClick.AddListener (() => DestroyItem3 (flower));
@@ -66,12 +88,21 @@ public class Item : MonoBehaviour
 		paintingButton.onClick.AddListener (() => DestroyItem3 (painting));
 		toySoldierButton.onClick.AddListener (() => AddCount (toySoldierButton));
 		toySoldierButton.onClick.AddListener (() => DestroyItem3 (toysoldier));
-		/*
+
+        page1Button.onClick.AddListener(() => AddCount(page1Button));
+        page1Button.onClick.AddListener(() => DestroyItem3(page1));
+        page2Button.onClick.AddListener(() => AddCount(page2Button));
+        page2Button.onClick.AddListener(() => DestroyItem3(page2));
+        page3Button.onClick.AddListener(() => AddCount(page3Button));
+        page3Button.onClick.AddListener(() => DestroyItem3(page3));
+        page4Button.onClick.AddListener(() => AddCount(page4Button));
+        page4Button.onClick.AddListener(() => DestroyItem3(page4));
+        /*
         //toySoldierButton.onClick.AddListener(() => DestroyItem(toySoldierButton));
         //paintingButton.onClick.AddListener(() => DestroyItem(paintingButton));
         //flowerButton.onClick.AddListener(() => DestroyItem(flowerButton));
         */
-		/*
+        /*
         flowerButton2 = GameObject.Find("FlowerButton2").GetComponent<Button>();
         paintingButton2 = GameObject.Find("PaintingButton2").GetComponent<Button>();
         toySoldierButton2 = GameObject.Find("ToySoldierButton2").GetComponent<Button>();
@@ -83,7 +114,7 @@ public class Item : MonoBehaviour
         toySoldierButton2.onClick.AddListener(() => DestroyItem2(toySoldierButton2));
         abcButton2.onClick.AddListener(() => DestroyItem2(abcButton2));
 		*/
-	}
+    }
 
 	void Awake ()
 	{
@@ -160,9 +191,35 @@ public class Item : MonoBehaviour
 		// GameObject.Destroy(this.gameObject);
 		if (itemCount == 4) {
 			changeRoom ();
+           // itemCount = 0;
 		}
 	}
-	/*
+
+    public void AddCount2(Button item)
+    {
+        Debug.Log("itemCount" + itemCount2);
+        if (itemCount2 < 5)
+        {
+            itemCount2 += 1;
+        }
+        if (itemCount2 == 4)
+        {
+            item.interactable = false;
+            Camera.main.transform.position = new Vector3(0, -60, -10);
+           // movement.changeFinal();
+            if (npcPanel4Object.activeSelf)
+            {
+                npcPanel4Object.SetActive(false);
+            }
+            if (npcPanel3Object.activeSelf)
+            {
+                npcPanel3Object.SetActive(false);
+            }
+            DisableCanvas();
+        }
+    }
+
+    /*
 	/// <summary>
 	/// adds 1 to room1 itemcount and turns off button interactablility
 	/// changes room if itemcount reacheas 4
@@ -183,18 +240,19 @@ public class Item : MonoBehaviour
         }
     }
     */
-	/// <summary>
-	/// destroys the sprite attatched to the button. Adds one to itemCount.
-	/// If itemCount is 4, changes room.
-	/// </summary>
-	/// <param name="item"></param>
-	public void DestroyItem3 (SpriteRenderer item)
+    /// <summary>
+    /// destroys the sprite attatched to the button. Adds one to itemCount.
+    /// If itemCount is 4, changes room.
+    /// </summary>
+    /// <param name="item"></param>
+    public void DestroyItem3 (SpriteRenderer item)
 	{
+        /*
 		if (itemCount2 < 5) {
 			itemCount2 += 1;
-		}
+		}*/
 		SpriteRenderer.Destroy (item);
-		if (itemCount2 == 4) {
+		/*if (itemCount2 == 4) {
 			Camera.main.transform.position = new Vector3 (0, -60, -10);
 			movement.changeFinal ();
 			if (npcPanel4Object.activeSelf) {
@@ -203,8 +261,8 @@ public class Item : MonoBehaviour
 			if (npcPanel3Object.activeSelf) {
 				npcPanel3Object.SetActive (false);
 			}
-			DisableCanvas ();
-		}
+			DisableCanvas ();*
+		}*/
 	}
 	/*
 	/// <summary>

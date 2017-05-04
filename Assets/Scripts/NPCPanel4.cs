@@ -77,10 +77,10 @@ public class NPCPanel4 : MonoBehaviour
     {
         npcPanel4Object.SetActive(true);
         //  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
-        ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "A twisted creature is standing where the school bully used to be. As you approach an eerie whisper echoes 'if you want to leave, find the missing pages of the Necronomicon'" };
-        modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "I will help you", action = myYesAction };
-        modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "tell the creature to sod off", action = myNoAction };
-        modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "ask 'why do you need the pages?'", action = myCancelAction };
+        ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "A twisted creature is standing where the school bully used to be. As you approach an eerie whisper echoes 'if you want to leave, find the missing pages of the Necronomicon'." };
+        modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "I will help you.", action = myYesAction };
+        modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Tell the creature to sod off.", action = myNoAction };
+        modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Ask 'why do you need the pages?'", action = myCancelAction };
         Debug.Log("Button pressed / NPC3");
 
         if (movement.IsMoving() == false)
@@ -98,7 +98,7 @@ public class NPCPanel4 : MonoBehaviour
 	{
 		npcPanel4Object.SetActive(true);
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
-		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "They worshipped, so they said, the Great Old Ones who lived ages before there were any men, and who came to the young world out of the sky" };
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "They worshipped, so they said, the Great Old Ones who lived ages before there were any men, and who came to the young world out of the sky." };
 		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "...", action = myCancelAction };
 
 		Debug.Log("Button pressed / NPC3");
@@ -120,8 +120,8 @@ public class NPCPanel4 : MonoBehaviour
 		npcPanel4Object.SetActive(true);
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
 		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "This creature seems to resemble the teacher. It screams 'Reforge the Necronomicon!'" };
-		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "what are you supposed to be?", action = myYesAction };
-		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Decline to help", action = myNoAction };
+		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "What are you supposed to be?", action = myYesAction };
+		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Decline to help.", action = myNoAction };
 		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Ask 'Why do you need to reforge it?'", action = myCancelAction };
 		Debug.Log("Button pressed / NPC3");
 
@@ -140,7 +140,7 @@ public class NPCPanel4 : MonoBehaviour
 	{
 		npcPanel4Object.SetActive(true);
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
-		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "The creature mutters in an incomprehensible language, but in your head echoes 'That is not dead which can eternal lie. And with strange aeons even death may die'" };
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "The creature mutters in an incomprehensible language, but in your head echoes 'That is not dead which can eternal lie. And with strange aeons even death may die'." };
 		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "...", action = myCancelAction };
 
 		Debug.Log("Button pressed / NPC3");

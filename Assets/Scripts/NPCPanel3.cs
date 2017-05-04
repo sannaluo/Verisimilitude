@@ -93,9 +93,9 @@ public class NPCPanel3 : MonoBehaviour
 		ikkuna = 1;
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
 		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "As you approach this kid you recognize him as your childhood bully. He yells 'Where is the essay you were supposed to write for me!?'" };
-		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "do nothing", action = myYesAction };
-		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Say 'I'm not gonna write anything for you' *punch the bully*", action = myNoAction };
-		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Say 'You don't scare me'", action = myCancelAction };
+		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Do nothing.", action = myYesAction };
+		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Say 'I'm not gonna write anything for you!' *punch the bully*", action = myNoAction };
+		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Say 'You don't scare me'.", action = myCancelAction };
 		Debug.Log ("Button pressed / NPC3");
 		if (movement.IsMoving () == false) {
 			Debug.Log ("Moving false");
@@ -115,8 +115,8 @@ public class NPCPanel3 : MonoBehaviour
 		npcPanel3Object.SetActive (true);
 
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
-		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "The oldest and strongest emotion of mankind is fear, and the oldest and strongest kind of fear is fear of the unknown" };
-		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Leave", action = myCancelAction };
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "The oldest and strongest emotion of mankind is fear, and the oldest and strongest kind of fear is fear of the unknown." };
+		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Leave.", action = myCancelAction };
 		Debug.Log ("Button pressed / NPC3");
 		if (movement.IsMoving () == false) {
 			Debug.Log ("Moving false");
@@ -137,9 +137,9 @@ public class NPCPanel3 : MonoBehaviour
 		npcPanel3Object.SetActive (true);
 		ikkuna = 2;
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
-		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "As you stop in front of the teacher he says 'Class is starting better get in or you're going to be late, I will not accept papers that are returned too late'" };
-		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Do nothing", action = myYesAction };
-		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Say 'I didn't enjoy your classes'", action = myNoAction };
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "As you stop in front of the teacher she says 'Class is starting better get in or you're going to be late, I will not accept papers that are returned too late'." };
+		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Do nothing.", action = myYesAction };
+		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Say 'I didn't enjoy your classes'.", action = myNoAction };
 		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Ask 'what was the subject of the assignment?'", action = myCancelAction };
 		Debug.Log ("Button pressed / NPC3");
 		if (movement.IsMoving () == false) {
@@ -162,7 +162,7 @@ public class NPCPanel3 : MonoBehaviour
 		npcPanel3Object.SetActive (true);
 
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
-		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "The teacher thinks for a while and then his eyes glaze over and starts quoting in a hollow voice 'Yog-Sototh knows the gate. Yog-Sothoth is the gate. Yog-Sototh is the key and guardian of the gate. Past, present, future, all are one in Yog-Sototh. He knows where the Old Ones broke through of old, and where They shall break through again. He knows where They have trod earth's fields, and where They still tread them, and why no one can behold Them as They tread'" };
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "The teacher thinks for a while and then his eyes glaze over and starts quoting in a hollow voice 'Yog-Sototh knows the gate. Yog-Sothoth is the gate. Yog-Sototh is the key and guardian of the gate. Past, present, future, all are one in Yog-Sototh. He knows where the Old Ones broke through of old, and where They shall break through again. He knows where They have trod earth's fields, and where They still tread them, and why no one can behold Them as They tread'." };
 		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "...", action = myCancelAction };
 		Debug.Log ("Button pressed / NPC3");
 		if (movement.IsMoving () == false) {

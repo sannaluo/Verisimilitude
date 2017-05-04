@@ -39,7 +39,7 @@ public class Movement : MonoBehaviour
         targetPosition.z = -5;
         targetPosition.x = 0;
         targetPosition.y = -2;
-        positionY = -2;
+        positionY = -1;
         positionZ = -5;
       
     }
@@ -109,7 +109,7 @@ public class Movement : MonoBehaviour
     /// </summary>
 	public void changeYposition()
     {
-        positionY = -17;
+        positionY = -16;
         targetPosition.y = positionY;
     }
   
@@ -118,7 +118,7 @@ public class Movement : MonoBehaviour
 	/// </summary>
     public void changeYpositionUp()
     {
-        positionY = -2;
+        positionY = -1;
         targetPosition.y = positionY;
     }
 
@@ -127,7 +127,7 @@ public class Movement : MonoBehaviour
 	/// </summary>
     public void changeRoom2()
     {
-        positionY = -32;
+        positionY = -31;
         targetPosition.y = positionY;
 
     }
@@ -137,7 +137,7 @@ public class Movement : MonoBehaviour
 	/// </summary>
     public void changeRoom2Down()
     {
-        positionY = -47;
+        positionY = -46;
         targetPosition.y = positionY;
     }
 
@@ -146,7 +146,7 @@ public class Movement : MonoBehaviour
 	/// </summary>
     public void changeFinal()
     {
-        positionY = -62;
+        positionY = -61;
         targetPosition.y = positionY;
     }
     /// <summary>
@@ -154,6 +154,6 @@ public class Movement : MonoBehaviour
     /// </summary>
 	public void startGame() 
 	{
-		positionY = -15;
+		positionY = -14;
 	}
 }

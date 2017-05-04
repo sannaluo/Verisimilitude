@@ -120,8 +120,8 @@ public class NPCPanel : MonoBehaviour
 		npcPanelObject.SetActive (true);
 		//ikkuna = 2;
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
-		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "You see a commercial of a brand new set of toy soldiers" };
-		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Leave", action = myCancelAction };
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "You see a commercial of a brand new set of toy soldiers." };
+		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Leave.", action = myCancelAction };
 		Debug.Log ("Button pressed / NPC3");
 		if (movement.IsMoving () == false) {
 			Debug.Log ("Moving false");
@@ -143,9 +143,9 @@ public class NPCPanel : MonoBehaviour
 
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
 		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Looking at your parents you see they look younger. They seem haunted and uncomfortable." };
-		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Leave", action = myYesAction };
+		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Leave.", action = myYesAction };
 		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Tell them to go away.", action = myNoAction };
-		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Ask where we are?", action = myCancelAction };
+		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Ask where we are.", action = myCancelAction };
 		Debug.Log ("Button pressed / NPC3");
 		if (movement.IsMoving () == false) {
 			Debug.Log ("Moving false");
@@ -166,8 +166,8 @@ public class NPCPanel : MonoBehaviour
 		npcPanelObject.SetActive (true);
 
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
-		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "your parents compliment how well furnished the room is. Your father exclaims that the painting was a steal" };
-		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "leave", action = myCancelAction };
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Your parents compliment how well furnished the room is. Your father exclaims that the painting was a steal." };
+		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Leave.", action = myCancelAction };
 
 		Debug.Log ("Button pressed / NPC3");
 		if (movement.IsMoving () == false) {

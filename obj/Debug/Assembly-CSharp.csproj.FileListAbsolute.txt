@@ -85,3 +85,6 @@ D:\koulu\C#\Verisimilitude2\Verisimilitude\Temp\bin\Debug\UnityEngine.PlaymodeTe
 D:\koulu\C#\Verisimilitude2\Verisimilitude\Temp\bin\Debug\UnityEngine.Analytics.xml
 D:\koulu\C#\Verisimilitude2\Verisimilitude\Temp\bin\Debug\UnityEngine.HoloLens.xml
 D:\koulu\C#\Verisimilitude2\Verisimilitude\Temp\bin\Debug\UnityEngine.VR.xml
+C:\Users\Sanna\Documents\Koulu\Verisimilitude\Verisimilitude\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Sanna\Documents\Koulu\Verisimilitude\Verisimilitude\obj\Debug\Assembly-CSharp.dll
+C:\Users\Sanna\Documents\Koulu\Verisimilitude\Verisimilitude\obj\Debug\Assembly-CSharp.pdb

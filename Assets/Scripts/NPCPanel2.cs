@@ -83,7 +83,7 @@ public class NPCPanel2 : MonoBehaviour
 			action = myYesAction
 		};
 		modalPanelDetails.button2Details = new EventButtonDetails {
-			buttonTitle = "Yell 'speak english!' at it.",
+			buttonTitle = "Yell 'speak English!' at it.",
 			action = myNoAction
 		};
 		modalPanelDetails.button3Details = new EventButtonDetails {
@@ -148,7 +148,7 @@ public class NPCPanel2 : MonoBehaviour
 	/// </summary>
 	public void NPCParentNightmareContinued ()
 	{
-		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Something BAD has happened to him" };
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Something BAD has happened to him." };
 		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Leave.", action = myCancelAction };
 		modalPanel.NewChoice (modalPanelDetails);
 	}

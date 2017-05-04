@@ -101,8 +101,8 @@ public class StartPanel : MonoBehaviour
 		startPanelObject.SetActive (true);
 		//ikkuna = 2;
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
-		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Click to interact with people and objects in the memory (npcs may need you to stand near them to start a dialogue)\n The slider in the bottom left corner is your Pleasantness. Every time you are rude to someone the meter goes down by one. There is no way to replenish lost pleasantness, if the meter reaches zero it's game over. The 0/4 counter at the bottom right corner is how many items you have collected from the memory, when you have collected 4/4 items you will progress to the next memory." };
-		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "back", action = myYesAction };
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Click to interact with people and objects in the memory (npcs may need you to stand near them to start a dialogue)\n The slider in the bottom left corner is your Pleasantness. Every time you are rude to someone the meter goes down by one. There is no way to replenish lost pleasantness, and if the meter reaches zero it's game over. The 0/4 counter at the bottom right corner is how many items you have collected from the memory. When you have collected 4/4 items you will progress to the next memory." };
+		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Back.", action = myYesAction };
 
 
 		modalPanel.NewChoice (modalPanelDetails);
@@ -120,9 +120,9 @@ public class StartPanel : MonoBehaviour
 		//ikkuna = 2;
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
 		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "From this point onward you will be trapped in an endless cycle and there is only one way to end the cycle.\n Do you want to start?" };
-		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "I wish to start this endless cycle", action = myNoAction };
-		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "I wish to start this endless cycle", action = myNoAction  };
-		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "I wish to start this endless cycle", action = myNoAction  };
+		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "I wish to start this endless cycle.", action = myNoAction };
+		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "I wish to start this endless cycle.", action = myNoAction  };
+		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "I wish to start this endless cycle.", action = myNoAction  };
 
 		modalPanel.NewChoice (modalPanelDetails);
 		

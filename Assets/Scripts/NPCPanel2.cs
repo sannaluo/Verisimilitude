@@ -23,33 +23,34 @@ public class NPCPanel2 : MonoBehaviour
 
 	private static NPCPanel2 npcPanel2;
 
-	public static NPCPanel2 Instance()
+	/// <summary>
+	/// creates a NPCPanel2 instance if there is none
+	/// </summary>
+	public static NPCPanel2 Instance ()
 	{
-		if (!npcPanel2)
-		{
-			npcPanel2 = FindObjectOfType(typeof(NPCPanel2)) as NPCPanel2;
-			if (!npcPanel2)
-			{
-				Debug.LogError("There needs to be one active NPCPanel2 script on a GameObject in your Scene");
+		if (!npcPanel2) {
+			npcPanel2 = FindObjectOfType (typeof(NPCPanel2)) as NPCPanel2;
+			if (!npcPanel2) {
+				Debug.LogWarning ("There needs to be one active NPCPanel2 script on a GameObject in your Scene");
 			}
 		}
 		return npcPanel2;
 
 	}
 
-	void Awake()
+	void Awake ()
 	{
-		modalPanel = ModalPanel.Instance();
+		modalPanel = ModalPanel.Instance ();
 		// modalPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
 		meter = PleasantnessMeter.Instance ();
-		movement = Movement.Instance();
+		movement = Movement.Instance ();
 		// movement = FindObjectOfType(typeof(Movement)) as Movement;
-		npcPanel = NPCPanel.Instance();
+		npcPanel = NPCPanel.Instance ();
 		//  npcPanel2 = NPCPanel2.Instance();
 
-		myYesAction = new UnityAction(TestYesFunction);
-		myNoAction = new UnityAction(TestNoFunction);
-		myCancelAction = new UnityAction(TestCancelFunction);
+		myYesAction = new UnityAction (TestYesFunction);
+		myNoAction = new UnityAction (TestNoFunction);
+		myCancelAction = new UnityAction (TestCancelFunction);
 	}
 	/*
     public void TestYNC()
@@ -71,53 +72,81 @@ public class NPCPanel2 : MonoBehaviour
 	/// Something the npc says and what you can answer.
 	/// Then sets the panel inactive.
 	/// </summary>
-	public void NPCTVNightmare()
+	public void NPCTVNightmare ()
 	{
 		ikkuna = 2;
-		npcPanel2Object.SetActive(true);
+		npcPanel2Object.SetActive (true);
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
 		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Looking toward the screen you see a twisted version of yourself and he seems to be muttering in some incomprehensible language." };
-		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Ask what you can do to help.", action = myYesAction };
-		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Yell 'speak english!' at it.", action = myNoAction };
-		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Listen what he is trying to tell you.", action = myCancelAction };
-		Debug.Log("Button pressed / NPC3");
+		modalPanelDetails.button1Details = new EventButtonDetails {
+			buttonTitle = "Ask what you can do to help.",
+			action = myYesAction
+		};
+		modalPanelDetails.button2Details = new EventButtonDetails {
+			buttonTitle = "Yell 'speak english!' at it.",
+			action = myNoAction
+		};
+		modalPanelDetails.button3Details = new EventButtonDetails {
+			buttonTitle = "Listen what he is trying to tell you.",
+			action = myCancelAction
+		};
+		Debug.Log ("Button pressed / NPC3");
 
-		if (movement.IsMoving() == false)
-		{
-			Debug.Log("Moving false");
-			modalPanel.NewChoice(modalPanelDetails);
+		if (movement.IsMoving () == false) {
+			Debug.Log ("Moving false");
+			modalPanel.NewChoice (modalPanelDetails);
 			//  npcPanelObject.SetActive(false);
+		} else {
+			Debug.Log ("moving not false");
 		}
-		else { Debug.Log("moving not false"); }
 	}
 
-	public void NPCTVNightmareContinued()
+	/// <summary>
+	/// Something the npc says and what you can answer
+	/// </summary>
+	public void NPCTVNightmareContinued ()
 	{
-		npcPanel2Object.SetActive(true);
+		npcPanel2Object.SetActive (true);
 		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn" };
 		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Leave.", action = myCancelAction };
 		modalPanel.NewChoice (modalPanelDetails);
 	}
-	public void NPCParentNightmare()
+
+	/// <summary>
+	/// Something the npc says and what you can answer
+	/// </summary>
+	public void NPCParentNightmare ()
 	{
 		ikkuna = 1;
-		npcPanel2Object.SetActive(true);
+		npcPanel2Object.SetActive (true);
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
 		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "You see a nightmarish creature looking at where your father used to be. It moans 'Dont you recognize me?'" };
-		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Ask 'are you my mother?'", action = myYesAction };
-		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Ask the creature what it did to your parents.", action = myNoAction };
-		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Ask what happened to your father.", action = myCancelAction };
-		Debug.Log("Button pressed / NPC3");
+		modalPanelDetails.button1Details = new EventButtonDetails {
+			buttonTitle = "Ask 'are you my mother?'",
+			action = myYesAction
+		};
+		modalPanelDetails.button2Details = new EventButtonDetails {
+			buttonTitle = "Ask the creature what it did to your parents.",
+			action = myNoAction
+		};
+		modalPanelDetails.button3Details = new EventButtonDetails {
+			buttonTitle = "Ask what happened to your father.",
+			action = myCancelAction
+		};
+		Debug.Log ("Button pressed / NPC3");
 
-		if (movement.IsMoving() == false)
-		{
-			Debug.Log("Moving false");
-			modalPanel.NewChoice(modalPanelDetails);
+		if (movement.IsMoving () == false) {
+			Debug.Log ("Moving false");
+			modalPanel.NewChoice (modalPanelDetails);
 			//  npcPanelObject.SetActive(false);
+		} else {
+			Debug.Log ("moving not false");
 		}
-		else { Debug.Log("moving not false"); }
 	}
-	public void NPCParentNightmareContinued()
+	/// <summary>
+	/// Something the npc says and what you can answer
+	/// </summary>
+	public void NPCParentNightmareContinued ()
 	{
 		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Something BAD has happened to him" };
 		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Leave.", action = myCancelAction };
@@ -127,16 +156,23 @@ public class NPCPanel2 : MonoBehaviour
 	//Send to the modal panel to set up the buttons and functions to call
 	//wrapped into unity actions
 
-	void TestYesFunction()
+	/// <summary>
+	/// move the camera to the regular dream stage and enable regular dream's npc buttons 
+	/// disable nightmare npc buttons
+	/// </summary>
+	void TestYesFunction ()
 	{
-		Camera.main.transform.position = new Vector3(0, 0, -10);
-		movement.changeYpositionUp();
+		Camera.main.transform.position = new Vector3 (0, 0, -10);
+		movement.changeYpositionUp ();
 
 		//   npcPanelObject.SetActive(true);
-		npcPanel2Object.SetActive(false);
-		npcPanelObject.SetActive(true);
+		npcPanel2Object.SetActive (false);
+		npcPanelObject.SetActive (true);
 	}
-	void TestNoFunction()
+	/// <summary>
+	/// Pleasantness meter goes down by 1
+	/// </summary>
+	void TestNoFunction ()
 	{
 		//  Camera.main.transform.Translate(0, -15, 0);
 		// movement.changeYposition();
@@ -144,11 +180,15 @@ public class NPCPanel2 : MonoBehaviour
 		//   npcPanel2.OpenPanel();
 		// npcPanel2Object.SetActive(false);
 		//tähän mittari --
-		npcPanel2Object.SetActive(true);
-		movement.StopMoving();
+		npcPanel2Object.SetActive (true);
+		movement.StopMoving ();
 		MeterDown ();
 	}
-	void TestCancelFunction()
+	/// <summary>
+	/// if Parent window is open display ParentContinued panel
+	/// if TV window is open display TVContinued panel
+	/// </summary>
+	void TestCancelFunction ()
 	{
 		movement.StopMoving ();
 		if (ikkuna == 1) {
@@ -157,8 +197,11 @@ public class NPCPanel2 : MonoBehaviour
 		if (ikkuna == 2) {
 			NPCTVNightmareContinued ();
 		}
-		movement.StopMoving();
+		movement.StopMoving ();
 	}
+	/// <summary>
+	/// reduce pleasantness meter by 1
+	/// </summary>
 	void MeterDown ()
 	{
 		if (meter.currentLevel > 0) {

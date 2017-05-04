@@ -31,13 +31,16 @@ public class StartPanel : MonoBehaviour
 
     private Item item; */
 
+	/// <summary>
+	/// creates a StartPanel instance if there is none already
+	/// </summary>
 	public static StartPanel Instance ()
 	{
 		Debug.Log ("Startpanel created");
 		if (!startPanel) {
 			startPanel = FindObjectOfType (typeof(StartPanel)) as StartPanel;
 			if (!startPanel) {
-				Debug.LogError ("There needs to be one active NPCPanel script on a GameObject in your Scene");
+				Debug.LogWarning ("There needs to be one active NPCPanel script on a GameObject in your Scene");
 			}
 		}
 		return startPanel;
@@ -47,6 +50,8 @@ public class StartPanel : MonoBehaviour
     void Start()
     {
 		canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+		canvas.GetComponent<Canvas>().enabled = false;
+		Debug.Log (canvas);
 		//flowerButton.onClick.AddListener(() => item.DestroyItem(flowerButton));
         //paintingButton.onClick.AddListener(() => item.DestroyItem(paintingButton));
     }
@@ -88,17 +93,15 @@ public class StartPanel : MonoBehaviour
 */
 
 	/// <summary>
-	/// Something the npc says and what you can answer.
-	/// after clicking a button sets the panel inactive.
+	/// dialog panel you see when you press the help button on the start screen
 	/// </summary>
-
 	public void NPCTutorial ()
 	{
 		Debug.Log ("NPCTutorial openend");
 		startPanelObject.SetActive (true);
 		//ikkuna = 2;
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
-		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Click to interact with people and objects in the memory (npcs may need you to stand near them to start a dialogue)\n The slider in the bottom left corner is your Pleasantness. Everytime you are rude to someone the meter goes down by one.  There is no way to replenish lost pleasantness, if the meter reaches zero it's game over. The 0/4 counter at the bottom right corner is how many items you have collected from the memory, when you have collected 4/4 items you will progress to the next memory." };
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Click to interact with people and objects in the memory (npcs may need you to stand near them to start a dialogue)\n The slider in the bottom left corner is your Pleasantness. Every time you are rude to someone the meter goes down by one. There is no way to replenish lost pleasantness, if the meter reaches zero it's game over. The 0/4 counter at the bottom right corner is how many items you have collected from the memory, when you have collected 4/4 items you will progress to the next memory." };
 		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "back", action = myYesAction };
 
 
@@ -108,16 +111,18 @@ public class StartPanel : MonoBehaviour
 	}
 
 
-
+	/// <summary>
+	/// dialog panel you see when you press the start button on the start screen
+	/// </summary>
 	public void StartGame() {
 		Debug.Log ("startgame called");
 		startPanelObject.SetActive (true);
 		//ikkuna = 2;
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
 		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "From this point onward you will be trapped in an endless cycle and there is only one way to end the cycle.\n Do you want to start?" };
-		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Yes", action = myNoAction };
-		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "YES!", action = myNoAction  };
-		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "YES!!", action = myNoAction  };
+		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "I wish to start this endless cycle", action = myNoAction };
+		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "I wish to start this endless cycle", action = myNoAction  };
+		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "I wish to start this endless cycle", action = myNoAction  };
 
 		modalPanel.NewChoice (modalPanelDetails);
 		
@@ -150,7 +155,7 @@ public class StartPanel : MonoBehaviour
 
 		Camera.main.transform.position = new Vector3 (0, 0, -10);
 
-
+		canvas.GetComponent<Canvas>().enabled = true;
 		npcPanelObject.SetActive (true);
 		startPanelObject.SetActive (false);
 		//canvas.GetComponent<Canvas>().enabled = true;

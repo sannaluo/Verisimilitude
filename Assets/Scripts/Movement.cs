@@ -16,7 +16,9 @@ public class Movement : MonoBehaviour
     public int positionZ;
     private Vector3 pz;
 
-
+	/// <summary>
+	/// creates a movement if there is none
+	/// </summary>
     public static Movement Instance()
     {
         if (!movement)
@@ -24,7 +26,7 @@ public class Movement : MonoBehaviour
             movement = FindObjectOfType(typeof(Movement)) as Movement;
             if (!movement)
             {
-                Debug.LogError("There needs to be one active Movement script on a GameObject in your Scene");
+                Debug.LogWarning("There needs to be one active Movement script on a GameObject in your Scene");
             }
         }
         return movement;
@@ -105,7 +107,7 @@ public class Movement : MonoBehaviour
     /// <summary>
 	/// Changes the y position to -17 (room1 nightmare)
     /// </summary>
-   public void changeYposition()
+	public void changeYposition()
     {
         positionY = -17;
         targetPosition.y = positionY;
@@ -147,8 +149,11 @@ public class Movement : MonoBehaviour
         positionY = -62;
         targetPosition.y = positionY;
     }
-    
-	public void startGame() {
-	positionY = -15;
+    /// <summary>
+    /// changes y position by -15 to move from start screen to first memory
+    /// </summary>
+	public void startGame() 
+	{
+		positionY = -15;
 	}
 }

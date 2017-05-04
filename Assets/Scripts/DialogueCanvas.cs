@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,5 +16,4 @@ public class DialogueCanvas : MonoBehaviour {
         dialogueCanvas.SetActive(true);
     }
 }
-
-
+*/

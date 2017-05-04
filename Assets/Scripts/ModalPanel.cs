@@ -40,7 +40,7 @@ public class ModalPanel : MonoBehaviour {
 	private static ModalPanel modalPanel;
 
 	/// <summary>
-	/// creates a ModalPanel instance.
+	/// creates a ModalPanel instance if there is none.
 	/// </summary>
 	public static ModalPanel Instance()
 	{
@@ -49,7 +49,7 @@ public class ModalPanel : MonoBehaviour {
 			modalPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
 			if (!modalPanel)
 			{
-				Debug.LogError("There needs to be one active ModalPanel script on a GameObject in your Scene");
+				Debug.LogWarning("There needs to be one active ModalPanel script on a GameObject in your Scene");
 			}
 		}
 		return modalPanel;

@@ -22,7 +22,9 @@ public class PleasantnessMeter : MonoBehaviour {
 
 
 
-
+	/// <summary>
+	/// creates a PleasantnessMeter if there is none
+	/// </summary>
     public static PleasantnessMeter Instance()
     {
         if (!pleasantnessMeter)
@@ -30,7 +32,7 @@ public class PleasantnessMeter : MonoBehaviour {
             pleasantnessMeter = FindObjectOfType(typeof(PleasantnessMeter)) as PleasantnessMeter;
             if (!pleasantnessMeter)
             {
-                Debug.LogError("There needs to be one active PleasantnessMeter script on a GameObject in your Scene");
+				Debug.LogWarning("There needs to be one active PleasantnessMeter script on a GameObject in your Scene");
             }
         }
         return pleasantnessMeter;
@@ -50,6 +52,7 @@ public class PleasantnessMeter : MonoBehaviour {
 
 	/// <summary>
 	/// reduce Pleasantness Slider by given amount
+	/// if 0 Death()
 	/// </summary>
 	/// <param name="amount">Amount.</param>
     public void ReduceLevel(int amount)
@@ -85,6 +88,6 @@ public class PleasantnessMeter : MonoBehaviour {
         n2.SetActive(false);
         n3.SetActive(false);
         n4.SetActive(false);
-    }
+    	}
     }
 

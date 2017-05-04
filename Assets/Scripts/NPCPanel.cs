@@ -11,7 +11,7 @@ public class NPCPanel : MonoBehaviour
 	private ModalPanel modalPanel;
 	private Movement movement;
 	private PleasantnessMeter meter;
-
+	private Sprite player;
 	//public GameObject modalPanelObject;
 
 	private NPCPanel2 npcPanel2;
@@ -30,12 +30,15 @@ public class NPCPanel : MonoBehaviour
 
     private Item item; */
 
+	/// <summary>
+	/// Creates a NPCPanel instance if there is none
+	/// </summary>
 	public static NPCPanel Instance ()
 	{
 		if (!npcPanel) {
 			npcPanel = FindObjectOfType (typeof(NPCPanel)) as NPCPanel;
 			if (!npcPanel) {
-				Debug.LogError ("There needs to be one active NPCPanel script on a GameObject in your Scene");
+				Debug.LogWarning ("There needs to be one active NPCPanel script on a GameObject in your Scene");
 			}
 		}
 		return npcPanel;
@@ -54,7 +57,7 @@ public class NPCPanel : MonoBehaviour
 	{
 		modalPanel = ModalPanel.Instance ();
 		movement = Movement.Instance ();
-		npcPanel = NPCPanel.Instance();
+		npcPanel = NPCPanel.Instance ();
 		npcPanel2 = NPCPanel2.Instance ();
 
 		meter = PleasantnessMeter.Instance ();
@@ -107,8 +110,10 @@ public class NPCPanel : MonoBehaviour
 		} else {
 			Debug.Log ("moving not false");
 		}
-
 	}
+	/// <summary>
+	/// displayed when you click button 3 of NPCTV
+	/// </summary>
 	public void NPCTVContinued ()
 	{
 
@@ -127,6 +132,10 @@ public class NPCPanel : MonoBehaviour
 		}
 
 	}
+
+	/// <summary>
+	/// displays when you click parents in first memory
+	/// </summary>
 	public void NPCParentNormal ()
 	{
 		ikkuna = 1;
@@ -147,6 +156,10 @@ public class NPCPanel : MonoBehaviour
 		}
 
 	}
+
+	/// <summary>
+	/// what displays when you press button 3 of NPCParentNormal
+	/// </summary>
 	public void NPCParentNormalcontinued ()
 	{
 		//ikkuna = 2;
@@ -197,12 +210,15 @@ public class NPCPanel : MonoBehaviour
 		npcPanel2Object.SetActive (true);
 		npcPanelObject.SetActive (false);
 
-			MeterDown ();
+		MeterDown ();
 
 
 
 	}
-
+	/// <summary>
+	/// if previous panel was Parent NPCParentNormalcontinued
+	/// if previous panel was TV NPCTVContinued
+	/// </summary>
 	void TestCancelFunction ()
 	{
 		movement.StopMoving ();

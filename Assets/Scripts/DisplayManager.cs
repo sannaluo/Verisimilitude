@@ -14,6 +14,9 @@ public class DisplayManager : MonoBehaviour
 
     private static DisplayManager displayManager;
 
+	/// <summary>
+	/// Creates a DisplayManager instance if there is none
+	/// </summary>
     public static DisplayManager Instance()
     {
         if (!displayManager)
@@ -22,19 +25,25 @@ public class DisplayManager : MonoBehaviour
         }
         if (!displayManager)
         {
-            Debug.LogError("There needs to be one active display manager script on a game object in your scene");
+            Debug.LogWarning("There needs to be one active display manager script on a game object in your scene");
 
         }
         return displayManager;
     }
 
-
+	/// <summary>
+	/// displays a message
+	/// </summary>
+	/// <param name="message">Message.</param>
     public void DisplayMessage(string message)
     {
         displayText.text = message;
         SetAlpha();
     }
 
+	/// <summary>
+	/// Sets the alpha.
+	/// </summary>
     void SetAlpha()
     {
         if (fadeAlpha != null)
@@ -44,6 +53,10 @@ public class DisplayManager : MonoBehaviour
         fadeAlpha = FadeAlpha();
         StartCoroutine(fadeAlpha);
     }
+	/// <summary>
+	/// Fades the alpha.
+	/// </summary>
+	/// <returns>The alpha.</returns>
     IEnumerator FadeAlpha()
     {
         Color resetColor = displayText.color;
@@ -62,5 +75,3 @@ public class DisplayManager : MonoBehaviour
         yield return null;
     }
 }
-
-

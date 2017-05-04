@@ -101,7 +101,7 @@ public class StartPanel : MonoBehaviour
 		startPanelObject.SetActive (true);
 		//ikkuna = 2;
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
-		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Click to interact with people and objects in the memory (npcs may need you to stand near them to start a dialogue)\n The slider in the bottom left corner is your Pleasantness. Every time you are rude to someone the meter goes down by one. There is no way to replenish lost pleasantness, and if the meter reaches zero it's game over. The 0/4 counter at the bottom right corner is how many items you have collected from the memory. When you have collected 4/4 items you will progress to the next memory." };
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Click to interact with people and objects in the memory (NPCs may need you to stand near them to start a dialogue)\n The slider in the bottom left corner is your Pleasantness. Every time you are rude to someone the meter goes down by one. There is no way to replenish lost pleasantness, and if the meter reaches zero it's game over. The 0/4 counter at the bottom right corner is how many items you have collected from the memory. When you have collected 4/4 items you will progress to the next memory." };
 		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Back.", action = myYesAction };
 
 

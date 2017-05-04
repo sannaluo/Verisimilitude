@@ -9,9 +9,9 @@ public class NPCPanel4 : MonoBehaviour
 {
 
     private ModalPanel modalPanel;
-
+    private int ikkuna = 0;
     private Movement movement;
-
+    private PleasantnessMeter meter;
     private NPCPanel3 npcPanel3;
     public GameObject npcPanel4Object;
     public GameObject npcPanel3Object;
@@ -43,7 +43,7 @@ public class NPCPanel4 : MonoBehaviour
     {
         modalPanel = ModalPanel.Instance();
         // modalPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
-
+        meter = PleasantnessMeter.Instance();
         movement = Movement.Instance();
         // movement = FindObjectOfType(typeof(Movement)) as Movement;
         npcPanel3 = NPCPanel3.Instance();
@@ -75,6 +75,7 @@ public class NPCPanel4 : MonoBehaviour
     /// </summary>
 	public void NPCBullyNightmare()
     {
+        ikkuna = 1;
         npcPanel4Object.SetActive(true);
         //  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
         ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "A twisted creature is standing where the school bully used to be. As you approach an eerie whisper echoes 'if you want to leave, find the missing pages of the Necronomicon'." };
@@ -117,6 +118,7 @@ public class NPCPanel4 : MonoBehaviour
 	/// </summary>
 	public void NPCTeacherNightmare()
 	{
+        ikkuna = 2;
 		npcPanel4Object.SetActive(true);
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
 		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "This creature seems to resemble the teacher. It screams 'Reforge the Necronomicon!'" };
@@ -180,10 +182,27 @@ public class NPCPanel4 : MonoBehaviour
         // npcPanel2Object.SetActive(false);
         // tähän mittari --
         movement.StopMoving();
+        MeterDown();
     }
     void TestCancelFunction()
     {
         movement.StopMoving();
+        if (ikkuna == 1)
+        {
+            NPCBullyNightmareContinued();
+        }
+        if (ikkuna == 2)
+        {
+            NPCTeacherNightmareContinued();
+        }
+    }
+
+    void MeterDown()
+    {
+        if (meter.currentLevel > 0)
+        {
+            meter.ReduceLevel(1);
+        }
     }
 }
 

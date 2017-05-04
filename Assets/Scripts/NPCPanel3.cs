@@ -137,7 +137,7 @@ public class NPCPanel3 : MonoBehaviour
 		npcPanel3Object.SetActive (true);
 		ikkuna = 2;
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
-		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "As you stop in front of the teacher she says 'Class is starting better get in or you're going to be late, I will not accept papers that are returned too late'." };
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "As you stop in front of the teacher she says 'Class is starting, better get in or you're going to be late. I will not accept papers that are returned too late'." };
 		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Do nothing.", action = myYesAction };
 		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Say 'I didn't enjoy your classes'.", action = myNoAction };
 		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Ask 'what was the subject of the assignment?'", action = myCancelAction };
@@ -162,7 +162,7 @@ public class NPCPanel3 : MonoBehaviour
 		npcPanel3Object.SetActive (true);
 
 		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
-		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "The teacher thinks for a while and then his eyes glaze over and starts quoting in a hollow voice 'Yog-Sototh knows the gate. Yog-Sothoth is the gate. Yog-Sototh is the key and guardian of the gate. Past, present, future, all are one in Yog-Sototh. He knows where the Old Ones broke through of old, and where They shall break through again. He knows where They have trod earth's fields, and where They still tread them, and why no one can behold Them as They tread'." };
+		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "The teacher thinks for a while and then her eyes glaze over and she starts quoting in a hollow voice 'Yog-Sototh knows the gate. Yog-Sothoth is the gate. Yog-Sototh is the key and guardian of the gate. Past, present, future, all are one in Yog-Sototh. He knows where the Old Ones broke through of old, and where They shall break through again. He knows where They have trod earth's fields, and where They still tread them, and why no one can behold Them as They tread'." };
 		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "...", action = myCancelAction };
 		Debug.Log ("Button pressed / NPC3");
 		if (movement.IsMoving () == false) {

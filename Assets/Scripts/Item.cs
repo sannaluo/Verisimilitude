@@ -202,9 +202,10 @@ public class Item : MonoBehaviour
         {
             itemCount2 += 1;
         }
+        item.interactable = false;
         if (itemCount2 == 4)
         {
-            item.interactable = false;
+           
             Camera.main.transform.position = new Vector3(0, -60, -10);
            // movement.changeFinal();
             if (npcPanel4Object.activeSelf)

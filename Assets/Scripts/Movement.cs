@@ -111,6 +111,7 @@ public class Movement : MonoBehaviour
     {
         positionY = -16;
         targetPosition.y = positionY;
+        gameObject.transform.position = targetPosition;
     }
   
 	/// <summary>
@@ -120,6 +121,7 @@ public class Movement : MonoBehaviour
     {
         positionY = -1;
         targetPosition.y = positionY;
+        gameObject.transform.position = targetPosition;
     }
 
 	/// <summary>
@@ -129,7 +131,7 @@ public class Movement : MonoBehaviour
     {
         positionY = -31;
         targetPosition.y = positionY;
-
+        gameObject.transform.position = targetPosition;
     }
 
 	/// <summary>
@@ -139,6 +141,7 @@ public class Movement : MonoBehaviour
     {
         positionY = -46;
         targetPosition.y = positionY;
+        gameObject.transform.position = targetPosition;
     }
 
 	/// <summary>
@@ -148,6 +151,7 @@ public class Movement : MonoBehaviour
     {
         positionY = -61;
         targetPosition.y = positionY;
+        gameObject.transform.position = targetPosition;
     }
     /// <summary>
     /// changes y position by -15 to move from start screen to first memory
@@ -155,5 +159,6 @@ public class Movement : MonoBehaviour
 	public void startGame() 
 	{
 		positionY = -14;
-	}
+        gameObject.transform.position = targetPosition;
+    }
 }

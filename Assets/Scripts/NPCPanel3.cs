@@ -21,11 +21,7 @@ public class NPCPanel3 : MonoBehaviour
 
 	private static NPCPanel3 npcPanel3;
 	public GameObject npcPanel4Object;
-	/*
-    private Button flowerButton;
-    private Button paintingButton;
 
-    private Item item; */
 
 	/// <summary>
 	/// Creates a NPCPanel 3 instance if there is none
@@ -41,20 +37,13 @@ public class NPCPanel3 : MonoBehaviour
 		return npcPanel3;
 
 	}
-	/*
-    void Start()
-    {
 
-        flowerButton.onClick.AddListener(() => item.DestroyItem(flowerButton));
-        paintingButton.onClick.AddListener(() => item.DestroyItem(paintingButton));
-    }
-    */
 
 	void Awake ()
 	{
 		modalPanel = ModalPanel.Instance ();
 		movement = Movement.Instance ();
-		//   npcPanel = NPCPanel.Instance();
+
 		npcPanel4 = NPCPanel4.Instance ();
 
 		meter = PleasantnessMeter.Instance ();
@@ -62,26 +51,9 @@ public class NPCPanel3 : MonoBehaviour
 		myYesAction = new UnityAction (TestYesFunction);
 		myNoAction = new UnityAction (TestNoFunction);
 		myCancelAction = new UnityAction (TestCancelFunction);
-		/*
-        flowerButton = GameObject.Find("FlowerButton").GetComponent<Button>();
-        paintingButton = GameObject.Find("PaintingButton").GetComponent<Button>();
-        */
+
 	}
-	/*
-    public void TestYNC()
-    {
-        npcPanelObject.SetActive(true);
-    //    modalPanel.Choice("Would you like to answer?\n Maybe?", myYesAction, myNoAction, myCancelAction);
-    }
-    public void TestC()
-    {
-        npcPanelObject.SetActive(true);
-        // modalPanel.Choice("Hello.", myCancelAction);
-        ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Hello." };
-        modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Hey.", action = myCancelAction };
-        modalPanel.NewChoice(modalPanelDetails);
-    }
-    */
+
 
 	/// <summary>
 	/// Something the npc says and what you can answer.
@@ -91,16 +63,16 @@ public class NPCPanel3 : MonoBehaviour
 	{
 		npcPanel3Object.SetActive (true);
 		ikkuna = 1;
-		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
+
 		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "As you approach this kid you recognize him as your childhood bully. He yells 'Where is the essay you were supposed to write for me!?'" };
 		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Do nothing.", action = myYesAction };
-		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Say 'I'm not gonna write anything for you!' *punch the bully*", action = myNoAction };
+		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Say 'I'm not gonna write anything for you!'", action = myNoAction };
 		modalPanelDetails.button3Details = new EventButtonDetails { buttonTitle = "Say 'You don't scare me'.", action = myCancelAction };
 		Debug.Log ("Button pressed / NPC3");
 		if (movement.IsMoving () == false) {
 			Debug.Log ("Moving false");
 			modalPanel.NewChoice (modalPanelDetails);
-			//  npcPanelObject.SetActive(false);
+
 		} else {
 			Debug.Log ("moving not false");
 		}
@@ -136,7 +108,7 @@ public class NPCPanel3 : MonoBehaviour
 	{
 		npcPanel3Object.SetActive (true);
 		ikkuna = 2;
-		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
+
 		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "As you stop in front of the teacher she says 'Class is starting, better get in or you're going to be late. I will not accept papers that are returned too late'." };
 		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Do nothing.", action = myYesAction };
 		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "Say 'I didn't enjoy your classes'.", action = myNoAction };
@@ -145,7 +117,7 @@ public class NPCPanel3 : MonoBehaviour
 		if (movement.IsMoving () == false) {
 			Debug.Log ("Moving false");
 			modalPanel.NewChoice (modalPanelDetails);
-			//  npcPanelObject.SetActive(false);
+
 		} else {
 			Debug.Log ("moving not false");
 		}
@@ -161,14 +133,14 @@ public class NPCPanel3 : MonoBehaviour
 	{
 		npcPanel3Object.SetActive (true);
 
-		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
+
 		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "The teacher thinks for a while and then her eyes glaze over and she starts quoting in a hollow voice 'Yog-Sototh knows the gate. Yog-Sothoth is the gate. Yog-Sototh is the key and guardian of the gate. Past, present, future, all are one in Yog-Sototh. He knows where the Old Ones broke through of old, and where They shall break through again. He knows where They have trod earth's fields, and where They still tread them, and why no one can behold Them as They tread'." };
 		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "...", action = myCancelAction };
 		Debug.Log ("Button pressed / NPC3");
 		if (movement.IsMoving () == false) {
 			Debug.Log ("Moving false");
 			modalPanel.NewChoice (modalPanelDetails);
-			//  npcPanelObject.SetActive(false);
+
 		} else {
 			Debug.Log ("moving not false");
 		}
@@ -179,11 +151,7 @@ public class NPCPanel3 : MonoBehaviour
 	void TestYesFunction ()
 	{
 		movement.StopMoving ();
-		//  Camera.main.transform.Translate(0, 15, 0);
-		// movement.changeYpositionUp();
-		// npcPanel2.ClosePanel();
-		//npcPanel.OpenPanel();
-		//   npcPanelObject.SetActive(true);
+
 	}
 
 	/// <summary>

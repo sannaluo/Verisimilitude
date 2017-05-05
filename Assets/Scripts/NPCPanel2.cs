@@ -15,7 +15,7 @@ public class NPCPanel2 : MonoBehaviour
 	private NPCPanel npcPanel;
 	public GameObject npcPanel2Object;
 	public GameObject npcPanelObject;
-	//  public GameObject movementObject;
+
 	private UnityAction myYesAction;
 	private UnityAction myNoAction;
 	private UnityAction myCancelAction;
@@ -52,22 +52,7 @@ public class NPCPanel2 : MonoBehaviour
 		myNoAction = new UnityAction (TestNoFunction);
 		myCancelAction = new UnityAction (TestCancelFunction);
 	}
-	/*
-    public void TestYNC()
-    {
-        npcPanel2Object.SetActive(true);
-    //    modalPanel.Choice("Would you like to answer?\n Maybe?", myYesAction, myNoAction, myCancelAction);
-    }
-    public void TestC()
-    {
-        npcPanel2Object.SetActive(true);
-        // modalPanel.Choice("Hello.", myCancelAction);
-        ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Hello." };
-        modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Hey.", action = myCancelAction };
-        modalPanel.NewChoice(modalPanelDetails);
-    }
 
-    */
 	/// <summary>
 	/// Something the npc says and what you can answer.
 	/// Then sets the panel inactive.
@@ -76,7 +61,7 @@ public class NPCPanel2 : MonoBehaviour
 	{
 		ikkuna = 2;
 		npcPanel2Object.SetActive (true);
-		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
+
 		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Looking toward the screen you see a twisted version of yourself and he seems to be muttering in some incomprehensible language." };
 		modalPanelDetails.button1Details = new EventButtonDetails {
 			buttonTitle = "Ask what you can do to help.",
@@ -95,7 +80,7 @@ public class NPCPanel2 : MonoBehaviour
 		if (movement.IsMoving () == false) {
 			Debug.Log ("Moving false");
 			modalPanel.NewChoice (modalPanelDetails);
-			//  npcPanelObject.SetActive(false);
+
 		} else {
 			Debug.Log ("moving not false");
 		}
@@ -119,7 +104,7 @@ public class NPCPanel2 : MonoBehaviour
 	{
 		ikkuna = 1;
 		npcPanel2Object.SetActive (true);
-		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
+
 		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "You see a nightmarish creature looking at where your father used to be. It moans 'Dont you recognize me?'" };
 		modalPanelDetails.button1Details = new EventButtonDetails {
 			buttonTitle = "Ask 'are you my mother?'",
@@ -138,7 +123,7 @@ public class NPCPanel2 : MonoBehaviour
 		if (movement.IsMoving () == false) {
 			Debug.Log ("Moving false");
 			modalPanel.NewChoice (modalPanelDetails);
-			//  npcPanelObject.SetActive(false);
+
 		} else {
 			Debug.Log ("moving not false");
 		}
@@ -174,12 +159,7 @@ public class NPCPanel2 : MonoBehaviour
 	/// </summary>
 	void TestNoFunction ()
 	{
-		//  Camera.main.transform.Translate(0, -15, 0);
-		// movement.changeYposition();
-		//    npcPanel.ClosePanel();
-		//   npcPanel2.OpenPanel();
-		// npcPanel2Object.SetActive(false);
-		//tähän mittari --
+		
 		npcPanel2Object.SetActive (true);
 		movement.StopMoving ();
 		MeterDown ();

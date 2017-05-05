@@ -44,10 +44,7 @@ public class PleasantnessMeter : MonoBehaviour {
         currentLevel = startingLevel;
         movement = Movement.Instance();
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-      /*  n1 = NPCPanel.Instance();
-        n2 = NPCPanel2.Instance();
-        n3 = NPCPanel3.Instance();
-        n4 = NPCPanel4.Instance();*/
+      
     }
 
 	/// <summary>
@@ -78,12 +75,7 @@ public class PleasantnessMeter : MonoBehaviour {
 
 
         canvas.GetComponent<Canvas>().enabled = false;
-        /*
-         n1.GetComponent<NPCPanel>().enabled = false;
-         n2.GetComponent<NPCPanel2>().enabled = false;
-         n3.GetComponent<NPCPanel3>().enabled = false;
-         n4.GetComponent<NPCPanel4>().enabled = false;
-         */
+        
         n1.SetActive(false);
         n2.SetActive(false);
         n3.SetActive(false);

@@ -13,7 +13,7 @@ public class StartPanel : MonoBehaviour
 	private PleasantnessMeter meter;
 	private Canvas canvas;
 
-	//public GameObject modalPanelObject;
+
 
 	private NPCPanel npcPanel;
 	public GameObject startPanelObject;
@@ -21,15 +21,11 @@ public class StartPanel : MonoBehaviour
 	private UnityAction myYesAction;
 	private UnityAction myNoAction;
 	private UnityAction myCancelAction;
-	//private int ikkuna = 0;
+
 	private static StartPanel startPanel;
 	public GameObject npcPanelObject;
 
-	/*
-    private Button flowerButton;
-    private Button paintingButton;
 
-    private Item item; */
 
 	/// <summary>
 	/// creates a StartPanel instance if there is none already
@@ -52,8 +48,7 @@ public class StartPanel : MonoBehaviour
 		canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 		canvas.GetComponent<Canvas>().enabled = false;
 		Debug.Log (canvas);
-		//flowerButton.onClick.AddListener(() => item.DestroyItem(flowerButton));
-        //paintingButton.onClick.AddListener(() => item.DestroyItem(paintingButton));
+
     }
     
 
@@ -71,26 +66,9 @@ public class StartPanel : MonoBehaviour
 		myCancelAction = new UnityAction (TestCancelFunction);
 
 
-		/*
-        flowerButton = GameObject.Find("FlowerButton").GetComponent<Button>();
-        paintingButton = GameObject.Find("PaintingButton").GetComponent<Button>();
-        */
+
 	}
-	/*
-    public void TestYNC()
-    {
-        npcPanelObject.SetActive(true);
-    //    modalPanel.Choice("Would you like to answer?\n Maybe?", myYesAction, myNoAction, myCancelAction);
-    }
-    public void TestC()
-    {
-        npcPanelObject.SetActive(true);
-        // modalPanel.Choice("Hello.", myCancelAction);
-        ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Hello." };
-        modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Hey.", action = myCancelAction };
-        modalPanel.NewChoice(modalPanelDetails);
-    }
-*/
+
 
 	/// <summary>
 	/// dialog panel you see when you press the help button on the start screen
@@ -99,14 +77,13 @@ public class StartPanel : MonoBehaviour
 	{
 		Debug.Log ("NPCTutorial openend");
 		startPanelObject.SetActive (true);
-		//ikkuna = 2;
-		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
+
 		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Click to interact with people and objects in the memory (NPCs may need you to stand near them to start a dialogue)\n The slider in the bottom left corner is your Pleasantness. Every time you are rude to someone the meter goes down by one. There is no way to replenish lost pleasantness, and if the meter reaches zero it's game over. The 0/4 counter at the bottom right corner is how many items you have collected from the memory. When you have collected 4/4 items you will progress to the next memory." };
 		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Back.", action = myYesAction };
 
 
 		modalPanel.NewChoice (modalPanelDetails);
-			//  npcPanelObject.SetActive(false);
+			
 
 	}
 
@@ -117,8 +94,7 @@ public class StartPanel : MonoBehaviour
 	public void StartGame() {
 		Debug.Log ("startgame called");
 		startPanelObject.SetActive (true);
-		//ikkuna = 2;
-		//  modalPanel.Choice("Lol hey let's party!", myYesAction, myNoAction, myCancelAction);
+
 		ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "From this point onward you will be trapped in an endless cycle and there is only one way to end the cycle.\n Do you want to start?" };
 		modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "I wish to start this endless cycle.", action = myNoAction };
 		modalPanelDetails.button2Details = new EventButtonDetails { buttonTitle = "I wish to start this endless cycle.", action = myNoAction  };
@@ -134,11 +110,7 @@ public class StartPanel : MonoBehaviour
 	void TestYesFunction ()
 	{
 		movement.StopMoving ();
-		//  Camera.main.transform.Translate(0, 15, 0);
-		// movement.changeYpositionUp();
-		// npcPanel2.ClosePanel();
-		//npcPanel.OpenPanel();
-		//   npcPanelObject.SetActive(true);
+
 
 
 
@@ -158,7 +130,7 @@ public class StartPanel : MonoBehaviour
 		canvas.GetComponent<Canvas>().enabled = true;
 		npcPanelObject.SetActive (true);
 		startPanelObject.SetActive (false);
-		//canvas.GetComponent<Canvas>().enabled = true;
+
 
 
 
@@ -174,16 +146,7 @@ public class StartPanel : MonoBehaviour
 
 	}
 
-	/// <summary>
-	/// reduce Pleasantness meter by 1
-	/// </summary>
-	/*void MeterDown ()
-	{
-		
-		if (meter.currentLevel > 0) {
-			meter.ReduceLevel (1);
-		}
-	}*/
+
 
 }
 

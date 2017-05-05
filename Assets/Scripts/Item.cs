@@ -74,11 +74,7 @@ public class Item : MonoBehaviour
         page2 = GameObject.Find("page2").GetComponent<SpriteRenderer>();
         page3 = GameObject.Find("page3").GetComponent<SpriteRenderer>();
         page4 = GameObject.Find("page4").GetComponent<SpriteRenderer>();
-        /*
-        flowerButton.onClick.AddListener(() => DestroyItem(flowerButton));
-        paintingButton.onClick.AddListener(() => DestroyItem(paintingButton));
-        toySoldierButton.onClick.AddListener(() => DestroyItem(toySoldierButton));
-        */
+        
 
         abcButton.onClick.AddListener (() => AddCount (abcButton));
 		abcButton.onClick.AddListener (() => DestroyItem3 (abcblocks));
@@ -97,23 +93,7 @@ public class Item : MonoBehaviour
         page3Button.onClick.AddListener(() => DestroyItem3(page3));
         page4Button.onClick.AddListener(() => AddCount(page4Button));
         page4Button.onClick.AddListener(() => DestroyItem3(page4));
-        /*
-        //toySoldierButton.onClick.AddListener(() => DestroyItem(toySoldierButton));
-        //paintingButton.onClick.AddListener(() => DestroyItem(paintingButton));
-        //flowerButton.onClick.AddListener(() => DestroyItem(flowerButton));
-        */
-        /*
-        flowerButton2 = GameObject.Find("FlowerButton2").GetComponent<Button>();
-        paintingButton2 = GameObject.Find("PaintingButton2").GetComponent<Button>();
-        toySoldierButton2 = GameObject.Find("ToySoldierButton2").GetComponent<Button>();
-        abcButton2 = GameObject.Find("ABCButton2").GetComponent<Button>();
-
-
-        flowerButton2.onClick.AddListener(() => DestroyItem2(flowerButton2));
-        paintingButton2.onClick.AddListener(() => DestroyItem2(paintingButton2));
-        toySoldierButton2.onClick.AddListener(() => DestroyItem2(toySoldierButton2));
-        abcButton2.onClick.AddListener(() => DestroyItem2(abcButton2));
-		*/
+        
     }
 
 	void Awake ()
@@ -220,81 +200,19 @@ public class Item : MonoBehaviour
         }
     }
 
-    /*
-	/// <summary>
-	/// adds 1 to room1 itemcount and turns off button interactablility
-	/// changes room if itemcount reacheas 4
-	/// </summary>
-	/// <param name="item">Item.</param>
-    public void DestroyItem(Button item)
-    {
-        Debug.Log(item + "itemCount" + itemCount);
-        if (itemCount < 5)
-        {
-            itemCount += 1;
-        }
-        item.interactable = false;
-        // GameObject.Destroy(this.gameObject);
-        if (itemCount == 4)
-        {
-            changeRoom();
-        }
-    }
-    */
+   
     /// <summary>
-    /// destroys the sprite attatched to the button. Adds one to itemCount.
-    /// If itemCount is 4, changes room.
+    /// destroys a sprite
+    
     /// </summary>
     /// <param name="item"></param>
     public void DestroyItem3 (SpriteRenderer item)
 	{
-        /*
-		if (itemCount2 < 5) {
-			itemCount2 += 1;
-		}*/
+        
 		SpriteRenderer.Destroy (item);
-		/*if (itemCount2 == 4) {
-			Camera.main.transform.position = new Vector3 (0, -60, -10);
-			movement.changeFinal ();
-			if (npcPanel4Object.activeSelf) {
-				npcPanel4Object.SetActive (false);
-			}
-			if (npcPanel3Object.activeSelf) {
-				npcPanel3Object.SetActive (false);
-			}
-			DisableCanvas ();*
-		}*/
+
 	}
-	/*
-	/// <summary>
-	/// adds 1 to room2 itemcount and turns off button interactability.
-	/// </summary>
-	/// <param name="item">Item.</param>
-    public void DestroyItem2(Button item)
-    {
-        if (itemCount2 < 5)
-        {
-            itemCount2 += 1;
-        }
-        item.interactable = false;
 
-
-        if (itemCount2 == 4)
-        {
-            Camera.main.transform.position = new Vector3(0, -60, -10);
-            movement.changeFinal();
-            if (npcPanel4Object.activeSelf)
-            {
-                npcPanel4Object.SetActive(false);
-            }
-            if (npcPanel3Object.activeSelf)
-            {
-                npcPanel3Object.SetActive(false);
-            }
-            DisableCanvas();
-        }
-    }
-    */
 	/// <summary>
 	/// Disables the canvas.
 	/// </summary>

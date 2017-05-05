@@ -47,8 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BringToFront.cs" />
-     <Compile Include="Assets\Scripts\ButtonContinue.cs" />
-     <Compile Include="Assets\Scripts\DialogueCanvas.cs" />
      <Compile Include="Assets\Scripts\DisplayManager.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\Item.cs" />
@@ -58,10 +56,8 @@
      <Compile Include="Assets\Scripts\NPCPanel2.cs" />
      <Compile Include="Assets\Scripts\NPCPanel3.cs" />
      <Compile Include="Assets\Scripts\NPCPanel4.cs" />
-     <Compile Include="Assets\Scripts\PlayerCollision.cs" />
      <Compile Include="Assets\Scripts\PleasantnessMeter.cs" />
      <Compile Include="Assets\Scripts\StartPanel.cs" />
-     <Compile Include="Assets\Scripts\TestModalPanel.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

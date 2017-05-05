@@ -24,11 +24,7 @@ public class NPCPanel : MonoBehaviour
 	private static NPCPanel npcPanel;
 	public GameObject npcPanel2Object;
 
-	/*
-    private Button flowerButton;
-    private Button paintingButton;
 
-    private Item item; */
 
 	/// <summary>
 	/// Creates a NPCPanel instance if there is none
@@ -44,14 +40,7 @@ public class NPCPanel : MonoBehaviour
 		return npcPanel;
 
 	}
-	/*
-    void Start()
-    {
 
-        flowerButton.onClick.AddListener(() => item.DestroyItem(flowerButton));
-        paintingButton.onClick.AddListener(() => item.DestroyItem(paintingButton));
-    }
-    */
 
 	void Awake ()
 	{
@@ -72,21 +61,7 @@ public class NPCPanel : MonoBehaviour
         paintingButton = GameObject.Find("PaintingButton").GetComponent<Button>();
         */
 	}
-	/*
-    public void TestYNC()
-    {
-        npcPanelObject.SetActive(true);
-    //    modalPanel.Choice("Would you like to answer?\n Maybe?", myYesAction, myNoAction, myCancelAction);
-    }
-    public void TestC()
-    {
-        npcPanelObject.SetActive(true);
-        // modalPanel.Choice("Hello.", myCancelAction);
-        ModalPanelDetails modalPanelDetails = new ModalPanelDetails { npc = "Hello." };
-        modalPanelDetails.button1Details = new EventButtonDetails { buttonTitle = "Hey.", action = myCancelAction };
-        modalPanel.NewChoice(modalPanelDetails);
-    }
-    */
+
 
 	/// <summary>
 	/// Something the npc says and what you can answer.

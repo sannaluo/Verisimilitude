@@ -59,29 +59,7 @@ public class ModalPanel : MonoBehaviour {
 	{
 		movement = Movement.Instance();
 	}
-	/*
-        public void Choice(string npc, UnityAction yesEvent, UnityAction noEvent, UnityAction cancelEvent)
-        {
-           modalPanelObject.SetActive(true);
-           button1.onClick.RemoveAllListeners();
-            button1.onClick.AddListener(yesEvent);
-            button1.onClick.AddListener(ClosePanel);
-           modalPanelObject.SetActive(true);
-            button2.onClick.RemoveAllListeners();
-            button2.onClick.AddListener(noEvent);
-            button2.onClick.AddListener(ClosePanel);
 
-            modalPanelObject.SetActive(true);
-            button3.onClick.RemoveAllListeners();
-            button3.onClick.AddListener(cancelEvent);
-            button3.onClick.AddListener(ClosePanel);
-
-            this.npc.text = npc;
-            button1.gameObject.SetActive(true);
-            button2.gameObject.SetActive(true);
-            button3.gameObject.SetActive(true);
-        }
-        */
 
 	/// <summary>
 	/// creates a modal panel interface with up to 3 different buttons
@@ -97,7 +75,7 @@ public class ModalPanel : MonoBehaviour {
 		button2.gameObject.SetActive(false);
 		button3.gameObject.SetActive(false);
 		this.npc.text = details.npc;
-		//  StopTime();
+
 
 		button1.onClick.RemoveAllListeners();
 		button1.onClick.AddListener(details.button1Details.action);
@@ -107,7 +85,7 @@ public class ModalPanel : MonoBehaviour {
 		button1.onClick.AddListener(ClosePanel);
 
 		
-		//  button1.onClick.AddListener(StartTime);
+
 
 
 		if (details.button2Details != null)
@@ -116,7 +94,7 @@ public class ModalPanel : MonoBehaviour {
 			button2.onClick.AddListener(details.button2Details.action);
 
 			button2.onClick.AddListener(ClosePanel);
-			//  button2.onClick.AddListener(StartTime);
+
 			button2Text.text = details.button2Details.buttonTitle;
 			button2.gameObject.SetActive(true);
 		}
@@ -128,29 +106,12 @@ public class ModalPanel : MonoBehaviour {
 			button3.onClick.AddListener(ClosePanel);
 				start = false;
 			}
-			//  button3.onClick.AddListener(StartTime);
+
 			button3Text.text = details.button3Details.buttonTitle;
 			button3.gameObject.SetActive(true);
 		}
 	}
-	// }
-	/*
-    //cancel
-	public void Choice(string npc, UnityAction cancelEvent)
-	{
-		modalPanelObject.SetActive(true);
 
-		modalPanelObject.SetActive(true);
-		button3.onClick.RemoveAllListeners();
-		button3.onClick.AddListener(cancelEvent);
-		button3.onClick.AddListener(ClosePanel);
-
-		this.npc.text = npc;
-		button1.gameObject.SetActive(false);
-		button2.gameObject.SetActive(false);
-		button3.gameObject.SetActive(true);
-	}
-	*/
 	/// <summary>
 	/// Closes the modalpanel.
 	/// </summary>
@@ -162,15 +123,7 @@ public class ModalPanel : MonoBehaviour {
 		active = false;
 	}
 
-	/*void StopTime()
-    {
-        Time.timeScale = 0f;
-    }
 
-    void StartTime()
-    {
-        Time.timeScale = 1f;
-    }*/
 
 	/// <summary>
 	/// returns active variable value.
